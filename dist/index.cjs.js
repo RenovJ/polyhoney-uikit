@@ -723,7 +723,7 @@ var Icon$U = function (props) {
 
 var Icon$T = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 90 90" }, props),
-        React__default['default'].createElement("image", { width: 90, height: 90, href: "images/cub/token.svg" })));
+        React__default['default'].createElement("image", { width: 90, height: 90, href: "images/polyhoney/token.png" })));
 };
 
 var Icon$S = function (props) {
@@ -1884,7 +1884,7 @@ var templateObject_1$p, templateObject_2$c, templateObject_3$7, templateObject_4
 
 var Icon$u = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 128 128" }, props),
-        React__default['default'].createElement("image", { width: "96", height: "96", href: "images/cub/token.svg" })));
+        React__default['default'].createElement("image", { width: "96", height: "96", href: "images/polyhoney/token.png" })));
 };
 
 var rotate = styled.keyframes(templateObject_1$o || (templateObject_1$o = __makeTemplateObject(["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"], ["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"])));
@@ -3066,7 +3066,7 @@ var Icon$m = function (props) {
 };
 
 var Logo$2 = function () {
-    return (React__default['default'].createElement("img", { alt: "CubFinance", src: "/images/cub/header_logo_wide.svg", style: { width: "auto", height: "30px" } }));
+    return (React__default['default'].createElement("img", { alt: "PolyhoneyFinance", src: "/images/polyhoney/polyhoney_light.png", style: { width: "auto", height: "30px" } }));
 };
 
 var Icon$l = function (props) {
