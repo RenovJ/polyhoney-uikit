@@ -25,6 +25,7 @@ const getDisabledStyles = ({ $isLoading, theme }: TransientButtonProps) => {
     &:disabled,
     &.pancake-button--disabled {
       background-color: ${theme.colors.backgroundDisabled};
+      background: ${theme.colors.backgroundDisabled};
       border-color: ${theme.colors.backgroundDisabled};
       box-shadow: none;
       color: ${theme.colors.textDisabled};

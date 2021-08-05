@@ -2,8 +2,8 @@ import { darkColors, lightColors } from "../../theme/colors";
 import { NavTheme } from "./types";
 
 export const light: NavTheme = {
-  background: lightColors.backgroundAlt,
-  hover: "#EEEAF4",
+  background: lightColors.primaryDark,
+  hover: lightColors.primaryBright,
 };
 
 export const dark: NavTheme = {

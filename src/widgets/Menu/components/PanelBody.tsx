@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
-import { SvgProps } from "../../../components/Svg";
+import { SvgProps, Svg } from "../../../components/Svg";
 import * as IconModule from "../icons";
 import Accordion from "./Accordion";
 import { MenuEntry, LinkLabel, LinkStatus } from "./MenuEntry";
@@ -53,8 +53,10 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
             >
               {isPushed &&
                 entry.items.map((item) => (
-                  <MenuEntry key={item.href} secondary isActive={item.href === location.pathname} onClick={handleClick}>
-                    <MenuLink href={item.href}>
+                  <MenuEntry key={item.href} secondary
+                    isActive={item.href === location.pathname}
+                    onClick={handleClick}>
+                    <MenuLink href={item.href} target={item.target ? item.target : "_self"}>
                       <LinkLabel isPushed={isPushed}>{item.label}</LinkLabel>
                       {item.status && (
                         <LinkStatus color={item.status.color} fontSize="14px">
@@ -69,7 +71,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
         }
         return (
           <MenuEntry key={entry.label} isActive={entry.href === location.pathname} className={calloutClass}>
-            <MenuLink href={entry.href} onClick={handleClick}>
+            <MenuLink href={entry.href} onClick={handleClick} target={entry.target ? entry.target : "_self"}>
               {iconElement}
               <LinkLabel isPushed={isPushed}>{entry.label}</LinkLabel>
               {entry.status && (

@@ -50,6 +50,8 @@ export declare type Colors = {
     textDisabled: string;
     textSubtle: string;
     borderColor: string;
+    textMenu: string;
+    textMenuHovered: string;
     gradients: Gradients;
     binance: string;
 };

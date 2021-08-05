@@ -31,6 +31,7 @@ export { default as ErrorIcon } from "./Icons/Error";
 export { default as HelpIcon } from "./Icons/Help";
 export { default as HistoryIcon } from "./Icons/History";
 export { default as InfoIcon } from "./Icons/Info";
+export { default as BuybackIcon } from "./Icons/Buyback";
 export { default as LaurelLeftIcon } from "./Icons/LaurelLeft";
 export { default as LaurelRightIcon } from "./Icons/LaurelRight";
 export { default as ListViewIcon } from "./Icons/ListView";

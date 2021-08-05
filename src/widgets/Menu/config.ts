@@ -147,14 +147,14 @@ export const socials = [
     items: [
       {
         label: "English",
-        href: "https://t.me/cubdefi"
+        href: "https://t.me/HoneyFarmChat"
       },
     ],
   },
   {
     label: "Twitter",
     icon: "TwitterIcon",
-    href: "https://twitter.com/financeleo",
+    href: "https://twitter.com/HoneyFarmFi",
   },
 ];
 

@@ -56,6 +56,8 @@ export type Colors = {
   textDisabled: string;
   textSubtle: string;
   borderColor: string;
+  textMenu: string;
+  textMenuHovered: string;
 
   // Gradients
   gradients: Gradients;
