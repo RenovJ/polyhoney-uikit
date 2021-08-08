@@ -22,3 +22,5 @@ export { default as BlogIcon } from "./Blog";
 export { default as PawIcon } from "./Paw";
 export { default as TokenizeIcon } from "./Tokenize";
 export { default as AuditIcon } from "./Audit";
+export { default as MediumIcon } from "./Medium";
+export { default as BuybackIcon } from "./Buyback";

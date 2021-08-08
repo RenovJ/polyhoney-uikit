@@ -146,10 +146,19 @@ export const socials = [
     icon: "TelegramIcon",
     items: [
       {
-        label: "English",
+        label: "Announcement",
+        href: "https://t.me/HoneyFarmAnn"
+      },
+      {
+        label: "Community",
         href: "https://t.me/HoneyFarmChat"
       },
     ],
+  },
+  {
+    label: "Medium",
+    icon: "MediumIcon",
+    href: "https://medium.com/@honeyfarmchef",
   },
   {
     label: "Twitter",
