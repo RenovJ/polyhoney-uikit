@@ -1,9 +1,9 @@
 import { InputHTMLAttributes } from "react";
 import styled from "styled-components";
 import Text from "../Text/Text";
-import bunnyHeadMain from "./svg/bunnyhead-main.svg";
-import bunnyHeadMax from "./svg/bunnyhead-max.svg";
-import bunnyButt from "./svg/bunnybutt.svg";
+import bunnyHeadMain from "./svg/right.svg";
+import bunnyHeadMax from "./svg/right_full.svg";
+import bunnyButt from "./svg/left.svg";
 
 interface SliderLabelProps {
   progress: string;
