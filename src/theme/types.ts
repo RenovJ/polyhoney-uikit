@@ -58,6 +58,8 @@ export type Colors = {
   borderColor: string;
   textMenu: string;
   textMenuHovered: string;
+  menuBackground: string;
+  menuBackgroundHovered: string;
 
   // Gradients
   gradients: Gradients;
