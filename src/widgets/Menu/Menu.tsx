@@ -39,6 +39,14 @@ const BodyWrapper = styled.div`
   display: flex;
 `;
 
+const FloatingBanner = styled.div`
+  position: fixed;
+  bottom: 15px;
+  right: 20px;
+  z-index: 999;
+  width: 250px;
+`;
+
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   flex-grow: 1;
   margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
@@ -145,6 +153,11 @@ const Menu: React.FC<NavProps> = ({
           {children}
         </Inner>
         <MobileOnlyOverlay show={isPushed} onClick={() => setIsPushed(false)} role="presentation" />
+        <FloatingBanner>
+          <a href="https://paladinsec.co/projects/honeyfarm-layer-3/" target="_blank">
+            <img src="https://paladinsec.co/pld/assets/audited-by-paladin-long.svg" width="250"/>
+          </a>
+        </FloatingBanner>
       </BodyWrapper>
     </Wrapper>
   );
