@@ -8,5 +8,5 @@ export const light: NavTheme = {
 
 export const dark: NavTheme = {
   background: darkColors.menuBackground,
-  hover: lightColors.menuBackgroundHovered,
+  hover: darkColors.menuBackgroundHovered,
 };

@@ -7,7 +7,7 @@ interface LogoProps extends SvgProps {
 
 const Logo: React.FC<LogoProps> = () => {
   return (
-    <img alt="HoneyFarmFinance" src="/images/honeymoon/main_logo.png" style={{width: "auto", height: "30px"}} />
+    <img alt="HoneyFarmFinance" src="/images/honeybee/main_logo.png" style={{width: "auto", height: "60px"}} />
   );
 };
 

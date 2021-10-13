@@ -58,6 +58,7 @@ export type Colors = {
   borderColor: string;
   textMenu: string;
   textMenuHovered: string;
+  headerBackground: string;
   menuBackground: string;
   menuBackgroundHovered: string;
 
