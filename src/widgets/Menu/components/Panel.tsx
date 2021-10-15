@@ -12,6 +12,8 @@ interface Props extends PanelProps, PushedProps {
 
 const BusybeeLinkContainer = styled.div`
   margin-left: 20px;
+  margin-bottom: 20px;
+  opacity: 0.5;
 `
 
 const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
