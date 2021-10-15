@@ -155,8 +155,8 @@ const Menu: React.FC<NavProps> = ({
         <MobileOnlyOverlay show={isPushed} onClick={() => setIsPushed(false)} role="presentation" />
         {/*
         <FloatingBanner>
-          <a href="https://paladinsec.co/projects/honeyfarm-layer-3/" target="_blank">
-            <img src="https://paladinsec.co/pld/assets/audited-by-paladin-long.svg" width="250"/>
+          <a href="" target="_blank">
+            <img src="/images/audit.png" width="250"/>
           </a>
         </FloatingBanner>
         */}

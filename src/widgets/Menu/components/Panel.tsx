@@ -10,6 +10,10 @@ interface Props extends PanelProps, PushedProps {
   isMobile: boolean;
 }
 
+const BusybeeLinkContainer = styled.div`
+  margin-left: 20px;
+`
+
 const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   position: fixed;
   padding-top: ${({ showMenu }) => (showMenu ? "80px" : 0)};
@@ -37,12 +41,20 @@ const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
 
 const Banner = styled.div`
   margin-left: 20px;
+  border-radius: 10px;
 `
 
 const Panel: React.FC<Props> = (props) => {
   const { isPushed, showMenu } = props;
   return (
     <StyledPanel isPushed={isPushed} showMenu={showMenu}>
+          
+      <BusybeeLinkContainer>
+        <a href="/">
+            <img height="36px" src="images/busybee_link.png" />
+        </a>
+      </BusybeeLinkContainer>
+      
       <PanelBody {...props} />
       {/*
       <a href={"https://rugdoc.io/project/honey-farm/"} target="_blank">
@@ -50,7 +62,7 @@ const Panel: React.FC<Props> = (props) => {
       </a>
       */}
       <Banner>
-        <a href="https://paladinsec.co/projects/honeyfarm-layer-3/" target="_blank"><img src="https://paladinsec.co/pld/assets/audited-by-paladin-standard.png" width="200"/></a>
+        <a href="/" target="_blank"><img src="images/audit.png" width="200"/></a>
       </Banner>
       <PanelFooter {...props} />
     </StyledPanel>
