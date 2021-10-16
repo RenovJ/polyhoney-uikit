@@ -14,6 +14,7 @@ import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
+  font-family: 'PT Sans Narrow', sans-serif;
 `;
 
 const StyledNav = styled.nav<{ showMenu: boolean }>`

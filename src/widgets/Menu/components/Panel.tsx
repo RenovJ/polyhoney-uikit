@@ -12,7 +12,7 @@ interface Props extends PanelProps, PushedProps {
 
 const BusybeeLinkContainer = styled.div`
   margin-left: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   opacity: 0.5;
 `
 

@@ -23,6 +23,7 @@ const Text = styled.div<TextProps>`
   ${({ textTransform }) => textTransform && `text-transform: ${textTransform};`}
   ${space}
   ${typography}
+  font-family: 'PT Sans Narrow', sans-serif;
 `;
 
 Text.defaultProps = {
