@@ -13,7 +13,6 @@ interface Props extends PanelProps, PushedProps {
 const BusybeeLinkContainer = styled.div`
   margin-left: 20px;
   margin-bottom: 10px;
-  opacity: 0.5;
 `
 
 const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
@@ -52,7 +51,7 @@ const Panel: React.FC<Props> = (props) => {
     <StyledPanel isPushed={isPushed} showMenu={showMenu}>
           
       <BusybeeLinkContainer>
-        <a href="/">
+        <a href="https://busybee.honeyfarm.finance">
             <img height="36px" src="images/busybee_link.png" />
         </a>
       </BusybeeLinkContainer>
