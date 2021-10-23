@@ -63,7 +63,7 @@ const Panel: React.FC<Props> = (props) => {
       </a>
       */}
       <Banner>
-        <a href="/" target="_blank"><img src="images/audit.png" width="200"/></a>
+        <a href="https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-HoneyFarm-v1.0.pdf" target="_blank"><img src="images/audit.png" width="200"/></a>
       </Banner>
       <PanelFooter {...props} />
     </StyledPanel>
