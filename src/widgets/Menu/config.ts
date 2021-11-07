@@ -165,6 +165,11 @@ export const socials = [
     icon: "TwitterIcon",
     href: "https://twitter.com/HoneyFarmFi",
   },
+  {
+    label: "Reddit",
+    icon: "RedditIcon",
+    href: "https://www.reddit.com/r/HoneyFarm_Official/",
+  },
 ];
 
 export const MENU_HEIGHT = 64;

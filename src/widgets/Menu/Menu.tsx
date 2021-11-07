@@ -3,6 +3,7 @@ import styled from "styled-components";
 import throttle from "lodash/throttle";
 import Overlay from "../../components/Overlay/Overlay";
 import Flex from "../../components/Box/Flex";
+import Link from "../../components/Link/Link";
 import { useMatchBreakpoints } from "../../hooks";
 import Logo from "./components/Logo";
 import Panel from "./components/Panel";
@@ -59,6 +60,10 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
     margin-left: ${({ isPushed }) => `${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED}px`};
     max-width: ${({ isPushed }) => `calc(100% - ${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED}px)`};
   }
+`;
+
+const RightContainer = styled.div`
+  align-items: center
 `;
 
 const MobileOnlyOverlay = styled(Overlay)`
@@ -122,6 +127,19 @@ const Menu: React.FC<NavProps> = ({
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
 
+  const otherChainLinks = (
+    <div>
+      <Flex mr={14}>
+        <Link href="https://bee.honeyfarm.finance" mr={10} external>
+          <img width={40} height={40} src="images/ic_bsc.png" />
+        </Link>
+        <Link href="https://avalanche.honeyfarm.finance" external>
+          <img width={36} height={36} src="images/ic_avalanche.png" />
+        </Link>
+      </Flex>
+    </div>
+  )
+
   return (
     <Wrapper>
       <StyledNav showMenu={showMenu}>
@@ -131,10 +149,13 @@ const Menu: React.FC<NavProps> = ({
           isDark={isDark}
           href={homeLink?.href ?? "/"}
         />
-        <Flex>
-          <UserBlock account={account} login={login} logout={logout} />
-          {/* profile && <Avatar profile={profile} /> */}
-        </Flex>
+        <RightContainer>
+          <Flex>
+            { !isMobile && otherChainLinks }
+            <UserBlock account={account} login={login} logout={logout} />
+            {/* profile && <Avatar profile={profile} /> */}
+          </Flex>
+        </RightContainer>
       </StyledNav>
       <BodyWrapper>
         <Panel
