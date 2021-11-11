@@ -51,18 +51,22 @@ const OtherChainLinkContainer = styled.div`
   text-align: center;
 `
 
+const ChainLinkIcon = styled.span`
+  margin: 0 4px 0 4px;
+`
+
 const otherChainLinks = (
   <OtherChainLinkContainer>
-    <span>
+    <ChainLinkIcon>
       <a href="https://bee.honeyfarm.finance">
-        <img width={40} height={40} src="images/ic_bsc.png" />
+        <img width={30} height={30} src="images/ic_bsc_dark.png" />
       </a>
-    </span>
-    <span>
+    </ChainLinkIcon>
+    <ChainLinkIcon>
       <a href="https://avalanche.honeyfarm.finance">
         <img width={36} height={36} src="images/ic_avalanche.png" />
       </a>
-    </span>
+    </ChainLinkIcon>
   </OtherChainLinkContainer>
 )
 
