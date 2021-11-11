@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useMatchBreakpoints } from "../../../hooks";
 import PanelBody from "./PanelBody";
 import PanelFooter from "./PanelFooter";
 import { SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "../config";
@@ -45,12 +46,35 @@ const Banner = styled.div`
   border-radius: 10px;
 `
 
+const OtherChainLinkContainer = styled.div`
+  margin: 0 auto 10px auto;
+  text-align: center;
+`
+
+const otherChainLinks = (
+  <OtherChainLinkContainer>
+    <span>
+      <a href="https://bee.honeyfarm.finance">
+        <img width={40} height={40} src="images/ic_bsc.png" />
+      </a>
+    </span>
+    <span>
+      <a href="https://avalanche.honeyfarm.finance">
+        <img width={36} height={36} src="images/ic_avalanche.png" />
+      </a>
+    </span>
+  </OtherChainLinkContainer>
+)
+
 const Panel: React.FC<Props> = (props) => {
   const { isPushed, showMenu } = props;
+  const { isXl } = useMatchBreakpoints();
+  const isMobile = isXl === false;
   return (
     <StyledPanel isPushed={isPushed} showMenu={showMenu}>
           
       <BusybeeLinkContainer>
+        { isMobile && otherChainLinks }
         <a href="https://busybee.honeyfarm.finance">
             <img height="36px" src="images/busybee_link.png" />
         </a>
