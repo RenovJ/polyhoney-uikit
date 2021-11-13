@@ -41,13 +41,6 @@ const BodyWrapper = styled.div`
   display: flex;
 `;
 
-const FloatingBanner = styled.div`
-  position: fixed;
-  bottom: 15px;
-  right: 20px;
-  z-index: 999;
-  width: 250px;
-`;
 
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   flex-grow: 1;
@@ -70,6 +63,13 @@ const MobileOnlyOverlay = styled(Overlay)`
     display: none;
   }
 `;
+
+const HoverImg = styled.img`
+  transition: background-color 0.2s, opacity 0.2s;
+  &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
+    opacity: 0.65;
+  }
+`
 
 const Menu: React.FC<NavProps> = ({
   account,
@@ -122,18 +122,6 @@ const Menu: React.FC<NavProps> = ({
 
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
-  
-  const otherChainLinks = (
-    <div>
-      <Flex mr={14}>
-        <Link href="https://bee.honeyfarm.finance" mr={10} external>
-          <img width={109} height={46} src="images/ic_bsc_modal_BT.png" />
-        </Link>
-     
-      </Flex>
-    </div>
-  )
-
   return (
     <Wrapper>
       <StyledNav showMenu={showMenu}>
@@ -144,7 +132,13 @@ const Menu: React.FC<NavProps> = ({
           href={homeLink?.href ?? "/"}
         />
         <Flex>
-          { !isMobile && otherChainLinks }
+          <div>
+            <Flex mr={isMobile ? 10 : 24}>
+              <Link href="https://bee.honeyfarm.finance" external>
+                {isMobile?<HoverImg width={46} height={46} src="images/modal_bsc_bt.png" />:<HoverImg width={109} height={46} src="images/ic_bsc_modal_BT.png" />}
+              </Link>
+            </Flex>
+          </div>
           <UserBlock account={account} login={login} logout={logout} />
           {/* profile && <Avatar profile={profile} /> */}
         </Flex>
