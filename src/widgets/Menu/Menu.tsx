@@ -127,11 +127,9 @@ const Menu: React.FC<NavProps> = ({
     <div>
       <Flex mr={14}>
         <Link href="https://bee.honeyfarm.finance" mr={10} external>
-          <img width={40} height={40} src="images/ic_bsc.png" />
+          <img width={109} height={46} src="images/ic_bsc_modal_BT.png" />
         </Link>
-        <Link href="https://avalanche.honeyfarm.finance" external>
-          <img width={36} height={36} src="images/ic_avalanche.png" />
-        </Link>
+     
       </Flex>
     </div>
   )

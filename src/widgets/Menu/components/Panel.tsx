@@ -48,7 +48,6 @@ const Banner = styled.div`
 
 const OtherChainLinkContainer = styled.div`
   margin: 0 auto 10px auto;
-  text-align: center;
 `
 
 const ChainLinkIcon = styled.span`
@@ -59,12 +58,7 @@ const otherChainLinks = (
   <OtherChainLinkContainer>
     <ChainLinkIcon>
       <a href="https://bee.honeyfarm.finance">
-        <img width={30} height={30} src="images/ic_bsc_dark.png" />
-      </a>
-    </ChainLinkIcon>
-    <ChainLinkIcon>
-      <a href="https://avalanche.honeyfarm.finance">
-        <img width={36} height={36} src="images/ic_avalanche.png" />
+        <img width={80} height={80} src="images/modal_bsc_bt.png" />
       </a>
     </ChainLinkIcon>
   </OtherChainLinkContainer>
