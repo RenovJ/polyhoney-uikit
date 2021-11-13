@@ -3,12 +3,13 @@ import styled from "styled-components";
 import throttle from "lodash/throttle";
 import Overlay from "../../components/Overlay/Overlay";
 import Flex from "../../components/Box/Flex";
-import Link from "../../components/Link/Link";
 import { useMatchBreakpoints } from "../../hooks";
 import Logo from "./components/Logo";
 import Panel from "./components/Panel";
 import UserBlock from "./components/UserBlock";
+import NetworkSelectModal from "./components/NetworkSelectModal";
 import { NavProps } from "./types";
+import { useModal } from "../Modal";
 // import Avatar from "./components/Avatar";
 import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
 
@@ -40,7 +41,6 @@ const BodyWrapper = styled.div`
   position: relative;
   display: flex;
 `;
-
 
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   flex-grow: 1;
@@ -90,7 +90,7 @@ const Menu: React.FC<NavProps> = ({
   const [isPushed, setIsPushed] = useState(!isMobile);
   const [showMenu, setShowMenu] = useState(true);
   const refPrevOffset = useRef(window.pageYOffset);
-
+  const [onPresentNetworkSelectModal] = useModal(<NetworkSelectModal/>);
   useEffect(() => {
     const handleScroll = () => {
       const currentOffset = window.pageYOffset;
@@ -133,10 +133,8 @@ const Menu: React.FC<NavProps> = ({
         />
         <Flex>
           <div>
-            <Flex mr={isMobile ? 10 : 24}>
-              <Link href="https://bee.honeyfarm.finance" external>
+            <Flex mr={isMobile ? 10 : 24}    onClick={() => {onPresentNetworkSelectModal()}}>
                 {isMobile?<HoverImg width={46} height={46} src="images/modal_bsc_bt.png" />:<HoverImg width={109} height={46} src="images/ic_bsc_modal_BT.png" />}
-              </Link>
             </Flex>
           </div>
           <UserBlock account={account} login={login} logout={logout} />
