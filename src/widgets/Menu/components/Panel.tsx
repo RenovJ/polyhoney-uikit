@@ -11,8 +11,9 @@ interface Props extends PanelProps, PushedProps {
   isMobile: boolean;
 }
 
-const BusybeeLinkContainer = styled.div`
-  margin-left: 20px;
+const BusybeeLinkContainer = styled.div<{ isPushed: boolean }>`
+  margin-left: ${({ isPushed }) => (isPushed ? "10px" : "0px" )};
+  margin-Right: ${({ isPushed }) => (isPushed ? "10px" : "0px" )};
   margin-bottom: 10px;
 `
 
@@ -41,34 +42,11 @@ const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   }
 `;
 
-const Banner = styled.div`
-  margin-left: 20px;
+const Banner = styled.div<{ isPushed: boolean }>`
+  margin-left: ${({ isPushed }) => (isPushed ? `20px` : `0px`)};;
   border-radius: 10px;
 `
 
-const OtherChainLinkContainer = styled.div`
-  margin: 0 auto 10px auto;
-  text-align: center;
-`
-
-const ChainLinkIcon = styled.span`
-  margin: 0 4px 0 4px;
-`
-
-const otherChainLinks = (
-  <OtherChainLinkContainer>
-    <ChainLinkIcon>
-      <a href="https://bee.honeyfarm.finance">
-        <img width={30} height={30} src="images/ic_bsc_dark.png" />
-      </a>
-    </ChainLinkIcon>
-    <ChainLinkIcon>
-      <a href="https://avalanche.honeyfarm.finance">
-        <img width={36} height={36} src="images/ic_avalanche.png" />
-      </a>
-    </ChainLinkIcon>
-  </OtherChainLinkContainer>
-)
 
 const Panel: React.FC<Props> = (props) => {
   const { isPushed, showMenu } = props;
@@ -77,8 +55,7 @@ const Panel: React.FC<Props> = (props) => {
   return (
     <StyledPanel isPushed={isPushed} showMenu={showMenu}>
           
-      <BusybeeLinkContainer>
-        { isMobile && otherChainLinks }
+      <BusybeeLinkContainer isPushed={isPushed}>
         <a href="https://busybee.honeyfarm.finance">
             <img height="36px" src="images/busybee_link.png" />
         </a>
@@ -90,7 +67,7 @@ const Panel: React.FC<Props> = (props) => {
         <img width="100%" src="images/rugdoc.png" />
       </a>
       */}
-      <Banner>
+      <Banner isPushed={isPushed}>
         <a href="https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-HoneyFarm-v1.0.pdf" target="_blank"><img src="images/audit.png" width="200"/></a>
       </Banner>
       <PanelFooter {...props} />

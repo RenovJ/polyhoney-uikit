@@ -3,12 +3,13 @@ import styled from "styled-components";
 import throttle from "lodash/throttle";
 import Overlay from "../../components/Overlay/Overlay";
 import Flex from "../../components/Box/Flex";
-import Link from "../../components/Link/Link";
 import { useMatchBreakpoints } from "../../hooks";
 import Logo from "./components/Logo";
 import Panel from "./components/Panel";
 import UserBlock from "./components/UserBlock";
+import NetworkSelectModal from "./components/NetworkSelectModal";
 import { NavProps } from "./types";
+import { useModal } from "../Modal";
 // import Avatar from "./components/Avatar";
 import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
 
@@ -41,14 +42,6 @@ const BodyWrapper = styled.div`
   display: flex;
 `;
 
-const FloatingBanner = styled.div`
-  position: fixed;
-  bottom: 15px;
-  right: 20px;
-  z-index: 999;
-  width: 250px;
-`;
-
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   flex-grow: 1;
   margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
@@ -71,6 +64,13 @@ const MobileOnlyOverlay = styled(Overlay)`
   }
 `;
 
+const HoverImg = styled.img`
+  transition: background-color 0.2s, opacity 0.2s;
+  &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
+    opacity: 0.65;
+  }
+`
+
 const Menu: React.FC<NavProps> = ({
   account,
   login,
@@ -90,7 +90,7 @@ const Menu: React.FC<NavProps> = ({
   const [isPushed, setIsPushed] = useState(!isMobile);
   const [showMenu, setShowMenu] = useState(true);
   const refPrevOffset = useRef(window.pageYOffset);
-
+  const [onPresentNetworkSelectModal] = useModal(<NetworkSelectModal/>);
   useEffect(() => {
     const handleScroll = () => {
       const currentOffset = window.pageYOffset;
@@ -122,20 +122,6 @@ const Menu: React.FC<NavProps> = ({
 
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
-  
-  const otherChainLinks = (
-    <div>
-      <Flex mr={14}>
-        <Link href="https://bee.honeyfarm.finance" mr={10} external>
-          <img width={40} height={40} src="images/ic_bsc.png" />
-        </Link>
-        <Link href="https://avalanche.honeyfarm.finance" external>
-          <img width={36} height={36} src="images/ic_avalanche.png" />
-        </Link>
-      </Flex>
-    </div>
-  )
-
   return (
     <Wrapper>
       <StyledNav showMenu={showMenu}>
@@ -146,7 +132,11 @@ const Menu: React.FC<NavProps> = ({
           href={homeLink?.href ?? "/"}
         />
         <Flex>
-          { !isMobile && otherChainLinks }
+          <div>
+            <Flex mr={isMobile ? 10 : 24}    onClick={() => {onPresentNetworkSelectModal()}}>
+                {isMobile?<HoverImg width={46} height={46} src="images/modal_bsc_bt.png" />:<HoverImg width={109} height={46} src="images/ic_bsc_modal_BT.png" />}
+            </Flex>
+          </div>
           <UserBlock account={account} login={login} logout={logout} />
           {/* profile && <Avatar profile={profile} /> */}
         </Flex>

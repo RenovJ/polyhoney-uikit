@@ -18,6 +18,7 @@ const blink = keyframes`
 `;
 
 const StyledLink = styled(Link)`
+  margin-right: 6px;
   display: flex;
   align-items: center;
   .mobile-icon {
@@ -57,7 +58,7 @@ const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
 
   return (
     <Flex>
-      <MenuButton aria-label="Toggle menu" onClick={togglePush} mr="24px" mt="4px">
+      <MenuButton aria-label="Toggle menu" onClick={togglePush} mr="12px" mt="4px">
         {isPushed ? (
           <HamburgerCloseIcon width="30px" color="menuBackground" />
         ) : (
