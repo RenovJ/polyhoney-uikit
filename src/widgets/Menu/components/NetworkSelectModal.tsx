@@ -15,8 +15,8 @@ const StyledDiv = styled.div<{isMobile: boolean}>`
   border-radius : 15px;
   border : 2px solid #DDC140;
   fill : #272727;
-  width : ${({ isMobile }) => (isMobile ? `280px` : `181px`)};
-  height : ${({ isMobile }) => (isMobile ? `280px` : `181px`)};
+  width : ${({ isMobile }) => (isMobile ? `224px` : `181px`)};
+  height : ${({ isMobile }) => (isMobile ? `224px` : `181px`)};
   display: flex;
   justify-content: center;
   vertical-align:
@@ -25,19 +25,19 @@ const FlexBox = styled.div<{isMobile: boolean}>`
   display: flex;
   justify-content : space-between;
   flex-direction : ${({ isMobile }) => (isMobile ? `column` : `row`)};
-  width :  ${({ isMobile }) => (isMobile ? `280px` : `389px`)};
-  ${({ isMobile }) => (isMobile && `height: 591px;`)}
+  width :  ${({ isMobile }) => (isMobile ? `224px` : `389px`)};
+  ${({ isMobile }) => (isMobile && `height: 473px;`)}
   margin: 10px 22px 15px 22px;
 `
 const BSCImage = styled.img<{isMobile: boolean}>`
-  margin-top:  ${({ isMobile }) => (isMobile ? `67px;` : `44px`)};
-  width:${({ isMobile }) => (isMobile ? `143px`: `93px;`)};
-  height:${({ isMobile }) => (isMobile ? `144px`: `94px;`)};
+  margin-top:  ${({ isMobile }) => (isMobile ? `54px;` : `44px`)};
+  width:${({ isMobile }) => (isMobile ? `115px`: `93px;`)};
+  height:${({ isMobile }) => (isMobile ? `116px`: `94px;`)};
 `
 const AVALImage = styled.img<{isMobile: boolean}>`
-  margin-top:  ${({ isMobile }) => (isMobile ? `67px;` : `44px`)};
-  width:${({ isMobile }) => (isMobile ? `125px`: `81px;` )};
-  height:${({ isMobile }) => (isMobile ? `144px`: `94px;`)};
+  margin-top:  ${({ isMobile }) => (isMobile ? `54px;` : `44px`)};
+  width:${({ isMobile }) => (isMobile ? `100px`: `81px;` )};
+  height:${({ isMobile }) => (isMobile ? `116px`: `94px;`)};
 `
 const NetworkSelectModal: React.FC<Props> = ({ onDismiss = () => null}) => 
 {
