@@ -11,8 +11,9 @@ interface Props extends PanelProps, PushedProps {
   isMobile: boolean;
 }
 
-const BusybeeLinkContainer = styled.div`
-  margin-left: 20px;
+const BusybeeLinkContainer = styled.div<{ isPushed: boolean }>`
+  margin-left: ${({ isPushed }) => (isPushed ? "10px" : "0px" )};
+  margin-Right: ${({ isPushed }) => (isPushed ? "10px" : "0px" )};
   margin-bottom: 10px;
 `
 
@@ -41,25 +42,10 @@ const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   }
 `;
 
-const Banner = styled.div`
-  margin-left: 20px;
+const Banner = styled.div<{ isPushed: boolean }>`
+  margin-left: ${({ isPushed }) => (isPushed ? `20px` : `0px`)};;
   border-radius: 10px;
 `
-
-const otherChainLinks = (
-  <div>
-    <span>
-      <a href="https://bee.honeyfarm.finance">
-        <img width={40} height={40} src="images/ic_bsc.png" />
-      </a>
-    </span>
-    <span>
-      <a href="https://avalanche.honeyfarm.finance">
-        <img width={36} height={36} src="images/ic_avalanche.png" />
-      </a>
-    </span>
-  </div>
-)
 
 const Panel: React.FC<Props> = (props) => {
   const { isPushed, showMenu } = props;
@@ -70,25 +56,26 @@ const Panel: React.FC<Props> = (props) => {
   return (
     <StyledPanel isPushed={isPushed} showMenu={showMenu}>
           
-      <BusybeeLinkContainer>
-        {/*
+      {/*
+      <BusybeeLinkContainer isPushed={isPushed}>
         <a href="https://busybee.honeyfarm.finance">
             <img width="200px" src="images/busybee_link.png" />
         </a>
-        */}
+        
         { isMobile && otherChainLinks }
+        
       </BusybeeLinkContainer>
-      
+      */}
       <PanelBody {...props} />
       {/*
       <a href={"https://rugdoc.io/project/honey-farm/"} target="_blank">
         <img width="100%" src="images/rugdoc.png" />
       </a>
       */}
-      <Banner>
+      <Banner isPushed={isPushed}>
         <a href="https://avax.farmscan.io/address/0x757490104fd4c80195d3c56bee4dc7b1279ccc51" target="_blank"><img src="images/farmscan.png" width="200"/></a>
       </Banner>
-      <Banner>
+      <Banner isPushed={isPushed}>
         <a href="https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-HoneyFarm-v1.0.pdf" target="_blank"><img src="images/audit.png" width="200"/></a>
       </Banner>
       <PanelFooter {...props} />
