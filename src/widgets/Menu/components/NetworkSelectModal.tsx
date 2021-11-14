@@ -19,7 +19,9 @@ const StyledDiv = styled.div<{isMobile: boolean}>`
   height : ${({ isMobile }) => (isMobile ? `224px` : `181px`)};
   display: flex;
   justify-content: center;
-  vertical-align:
+  transition: background-color 0.2s, opacity 0.2s;
+  &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
+    opacity: 0.65;
 `
 const FlexBox = styled.div<{isMobile: boolean}>`
   display: flex;
