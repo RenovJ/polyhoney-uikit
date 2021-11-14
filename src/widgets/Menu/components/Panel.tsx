@@ -15,6 +15,7 @@ const BusybeeLinkContainer = styled.div<{ isPushed: boolean }>`
   margin-left: ${({ isPushed }) => (isPushed ? "10px" : "0px" )};
   margin-Right: ${({ isPushed }) => (isPushed ? "10px" : "0px" )};
   margin-bottom: 10px;
+  transition: margin 0.2s;
 `
 
 const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
@@ -45,6 +46,7 @@ const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
 const Banner = styled.div<{ isPushed: boolean }>`
   margin-left: ${({ isPushed }) => (isPushed ? `20px` : `0px`)};;
   border-radius: 10px;
+  transition: margin-left 0.2s;
 `
 
 const Panel: React.FC<Props> = (props) => {
