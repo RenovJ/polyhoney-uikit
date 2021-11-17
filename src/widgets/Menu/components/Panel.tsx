@@ -44,9 +44,16 @@ const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
 
 const Banner = styled.div<{ isPushed: boolean }>`
   margin-left: ${({ isPushed }) => (isPushed ? `20px` : `0px`)};;
-  border-radius: 10px;
+  border-radius: 10px;  
+  transition: margin-left 0.2s; 
+  transition: background-color 0.2s, opacity 0.2s;
+  &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
+    opacity: 0.65;
+  }
 `
-
+const RoundedImage = styled.img`
+  border-radius: 8px;
+`
 
 const Panel: React.FC<Props> = (props) => {
   const { isPushed, showMenu } = props;
@@ -68,7 +75,7 @@ const Panel: React.FC<Props> = (props) => {
       </a>
       */}
       <Banner isPushed={isPushed}>
-        <a href="https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-HoneyFarm-v1.0.pdf" target="_blank"><img src="images/audit.png" width="200"/></a>
+        <a href="https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-HoneyFarm-v1.0.pdf" target="_blank"><RoundedImage src="images/audit.png" width="200"/></a>
       </Banner>
       <PanelFooter {...props} />
     </StyledPanel>
