@@ -33,11 +33,18 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
       {links.map((entry) => {
         const Icon = Icons[entry.icon];
         const iconElement = <Icon width="24px" mr="8px" />;
-        const calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
+        const calloutClass = entry.calloutClass
+          ? entry.calloutClass
+          : undefined;
 
         if (entry.items) {
-          const itemsMatchIndex = entry.items.findIndex((item) => item.href === location.pathname);
-          const initialOpenState = entry.initialOpenState === true ? entry.initialOpenState : itemsMatchIndex >= 0;
+          const itemsMatchIndex = entry.items.findIndex(
+            (item) => item.href === location.pathname
+          );
+          const initialOpenState =
+            entry.initialOpenState === true
+              ? entry.initialOpenState
+              : itemsMatchIndex >= 0;
 
           return (
             <Accordion
@@ -49,29 +56,95 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
               status={entry.status}
               initialOpenState={initialOpenState}
               className={calloutClass}
-              isActive={entry.items.some((item) => item.href === location.pathname)}
+              isActive={entry.items.some(
+                (item) => item.href === location.pathname
+              )}
             >
               {isPushed &&
-                entry.items.map((item) => (
-                  <MenuEntry key={item.href} secondary
-                    isActive={item.href === location.pathname}
-                    onClick={handleClick}>
-                    <MenuLink href={item.href} target={item.target ? item.target : "_self"}>
-                      <LinkLabel isPushed={isPushed}>{item.label}</LinkLabel>
-                      {item.status && (
-                        <LinkStatus color={item.status.color} fontSize="14px">
-                          {item.status.text}
-                        </LinkStatus>
+                entry.items.map((item) => {
+                  if (item.items) { 
+                    const InnerIcon = Icons[item.icon];
+                    const InnericonElement = <InnerIcon width="18px" mr="4px" ml="6px" />;
+                    return(
+                    <Accordion
+                      key={item.label}
+                      isPushed={isPushed}
+                      pushNav={pushNav}
+                      icon={InnericonElement}
+                      label={item.label}
+                      status={item.status}
+                      initialOpenState={initialOpenState}
+                      className={calloutClass}
+                      isActive={item.items.some(
+                        (item) => item.href === location.pathname
                       )}
-                    </MenuLink>
-                  </MenuEntry>
-                ))}
+                    >
+                      {isPushed &&
+                        item.items.map((innerItem) => {
+                          return (
+                            <MenuEntry
+                              key={innerItem.href}
+                              secondary
+                              isActive={innerItem.href === location.pathname}
+                              onClick={handleClick}
+                            >
+                              <MenuLink
+                                href={innerItem.href}
+                                target={innerItem.target ? innerItem.target : "_self"}
+                              >
+                                <LinkLabel isPushed={isPushed}>
+                                  {'　'+innerItem.label}
+                                </LinkLabel>
+                                {innerItem.status && (
+                                  <LinkStatus
+                                    color={innerItem.status.color}
+                                    fontSize="12px"
+                                  >
+                                    {innerItem.status.text}
+                                  </LinkStatus>
+                                )}
+                              </MenuLink>
+                            </MenuEntry>
+                          );
+                        })}
+                    </Accordion>);
+                  }
+
+                  return (
+                    <MenuEntry
+                      key={item.href}
+                      secondary
+                      isActive={item.href === location.pathname}
+                      onClick={handleClick}
+                    >
+                      <MenuLink
+                        href={item.href}
+                        target={item.target ? item.target : "_self"}
+                      >
+                        <LinkLabel isPushed={isPushed}>{item.label}</LinkLabel>
+                        {item.status && (
+                          <LinkStatus color={item.status.color} fontSize="14px">
+                            {item.status.text}
+                          </LinkStatus>
+                        )}
+                      </MenuLink>
+                    </MenuEntry>
+                  );
+                })}
             </Accordion>
           );
         }
         return (
-          <MenuEntry key={entry.label} isActive={entry.href === location.pathname} className={calloutClass}>
-            <MenuLink href={entry.href} onClick={handleClick} target={entry.target ? entry.target : "_self"}>
+          <MenuEntry
+            key={entry.label}
+            isActive={entry.href === location.pathname}
+            className={calloutClass}
+          >
+            <MenuLink
+              href={entry.href}
+              onClick={handleClick}
+              target={entry.target ? entry.target : "_self"}
+            >
               {iconElement}
               <LinkLabel isPushed={isPushed}>{entry.label}</LinkLabel>
               {entry.status && (
