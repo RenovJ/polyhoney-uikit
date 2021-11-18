@@ -54,6 +54,15 @@ const Banner = styled.div<{ isPushed: boolean }>`
 const RoundedImage = styled.img`
   border-radius: 8px;
 `
+const BusybeeImage = styled.img`
+  border-radius: 22.85px;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15); 
+  transition: background-color 0.2s, opacity 0.2s;
+  &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
+    opacity: 0.65;
+  }
+`
+
 
 const Panel: React.FC<Props> = (props) => {
   const { isPushed, showMenu } = props;
@@ -64,7 +73,7 @@ const Panel: React.FC<Props> = (props) => {
           
       <BusybeeLinkContainer isPushed={isPushed}>
         <a href="https://busybee.honeyfarm.finance">
-            <img height="36px" src="images/busybee_link.png" />
+            <BusybeeImage height="36px" src="images/busybee_link2.png" />
         </a>
       </BusybeeLinkContainer>
       

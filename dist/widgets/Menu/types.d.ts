@@ -24,6 +24,15 @@ export interface LinkStatus {
     color: keyof Colors;
 }
 export interface MenuSubEntry {
+    icon: string;
+    label: string;
+    href: string;
+    calloutClass?: string;
+    status?: LinkStatus;
+    target?: string;
+    items?: MenuSubSubEntry[];
+}
+export interface MenuSubSubEntry {
     label: string;
     href: string;
     calloutClass?: string;

@@ -52,6 +52,9 @@ export declare type Colors = {
     borderColor: string;
     textMenu: string;
     textMenuHovered: string;
+    headerBackground: string;
+    menuBackground: string;
+    menuBackgroundHovered: string;
     gradients: Gradients;
     binance: string;
 };
