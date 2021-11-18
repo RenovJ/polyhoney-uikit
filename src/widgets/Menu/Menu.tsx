@@ -140,7 +140,7 @@ const Menu: React.FC<NavProps> = ({
         <RightContainer>
           <Flex>
             <div>
-              <Flex mr={isMobile ? 10 : 24}    onClick={() => {onPresentNetworkSelectModal()}}>
+              <Flex mr={isMobile ? 10 : 24}  width={isMobile ? 46: 126} height={46}  onClick={() => {onPresentNetworkSelectModal()}}>
                   {isMobile?<HoverImg width={46} height={46} src="images/modal_avalanche_bt.png" />:<HoverImg width={126} height={46} src="images/ic_aval_modal_BT.png" />}
               </Flex>
             </div>
