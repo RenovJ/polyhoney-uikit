@@ -7,6 +7,8 @@ import Accordion from "./Accordion";
 import { MenuEntry, LinkLabel, LinkStatus } from "./MenuEntry";
 import MenuLink from "./MenuLink";
 import { PanelProps, PushedProps } from "../types";
+import ChangeNowModal from "./ChangeNowModal";
+import { useModal } from "../../Modal";
 
 interface Props extends PanelProps, PushedProps {
   isMobile: boolean;
@@ -24,7 +26,7 @@ const Container = styled.div`
 
 const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
   const location = useLocation();
-
+  const [onPresentChangeNowModal] = useModal(<ChangeNowModal />);
   // Close the menu when a user clicks a link on mobile
   const handleClick = isMobile ? () => pushNav(false) : undefined;
 
@@ -93,7 +95,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
                                 target={innerItem.target ? innerItem.target : "_self"}
                               >
                                 <LinkLabel isPushed={isPushed}>
-                                  {'　'+innerItem.label}
+                                    {"　" + innerItem.label}
                                 </LinkLabel>
                                 {innerItem.status && (
                                   <LinkStatus
@@ -107,7 +109,8 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
                             </MenuEntry>
                           );
                         })}
-                    </Accordion>);
+                      </Accordion>
+                    );
                   }
 
                   return (
@@ -117,6 +120,26 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
                       isActive={item.href === location.pathname}
                       onClick={handleClick}
                     >
+                      {item.href === "changeNow" ? (
+                        <MenuLink
+                          href={"#"}
+                          onClick={() => {
+                            onPresentChangeNowModal();
+                          }}
+                        >
+                          <LinkLabel isPushed={isPushed}>
+                            {item.label}
+                          </LinkLabel>
+                          {item.status && (
+                            <LinkStatus
+                              color={item.status.color}
+                              fontSize="14px"
+                            >
+                              {item.status.text}
+                            </LinkStatus>
+                          )}
+                        </MenuLink>
+                      ) : (
                       <MenuLink
                         href={item.href}
                         target={item.target ? item.target : "_self"}
@@ -128,6 +151,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
                           </LinkStatus>
                         )}
                       </MenuLink>
+                      )}
                     </MenuEntry>
                   );
                 })}
