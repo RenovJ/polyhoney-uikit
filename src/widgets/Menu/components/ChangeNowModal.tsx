@@ -18,9 +18,6 @@ const StyledDiv = styled.div<{isMobile: boolean}>`
   height : 355px;
   display: flex;
   justify-content: center;
-  transition: background-color 0.2s, opacity 0.2s;
-  &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
-    opacity: 0.65;
 `
 
 
