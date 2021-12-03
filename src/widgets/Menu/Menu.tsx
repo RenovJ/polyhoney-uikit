@@ -10,7 +10,6 @@ import UserBlock from "./components/UserBlock";
 import NetworkSelectModal from "./components/NetworkSelectModal";
 import { NavProps } from "./types";
 import { useModal } from "../Modal";
-// import Avatar from "./components/Avatar";
 import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
 
 const Wrapper = styled.div`
@@ -159,13 +158,6 @@ const Menu: React.FC<NavProps> = ({
           {children}
         </Inner>
         <MobileOnlyOverlay show={isPushed} onClick={() => setIsPushed(false)} role="presentation" />
-        {/*
-        <FloatingBanner>
-          <a href="" target="_blank">
-            <img src="/images/audit.png" width="250"/>
-          </a>
-        </FloatingBanner>
-        */}
       </BodyWrapper>
     </Wrapper>
   );
