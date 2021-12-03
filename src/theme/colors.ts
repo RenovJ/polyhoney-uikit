@@ -89,7 +89,7 @@ export const darkColors: Colors = {
   textSubtle: "#B9AB5D",
   textMenu: "#222222",
   textMenuHovered: "#FDED95",
-  headerBackground: "#222222",
+  headerBackground: "#2B2924",
   menuBackground: "#E4C100",
   menuBackgroundHovered: "#FDED95",
   borderColor: "#353535",
