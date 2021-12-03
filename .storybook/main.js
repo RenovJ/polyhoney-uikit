@@ -11,4 +11,5 @@ module.exports = {
     "@storybook/addon-a11y",
     "themeprovider-storybook/register",
   ],
+  staticDirs: ['../../polyhoney_front/public'],
 };
