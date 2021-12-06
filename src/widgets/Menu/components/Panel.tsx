@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useMatchBreakpoints } from "../../../hooks";
 import PanelBody from "./PanelBody";
 import PanelFooter from "./PanelFooter";
-import { SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "../config";
+import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "../config";
 import { PanelProps, PushedProps } from "../types";
 
 interface Props extends PanelProps, PushedProps {
@@ -19,7 +19,7 @@ const BusybeeLinkContainer = styled.div<{ isPushed: boolean }>`
 
 const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   position: fixed;
-  padding-top: ${({ showMenu }) => (showMenu ? "80px" : 0)};
+  padding-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT+18}px` : 0)};
   top: 0;
   left: 0;
   display: flex;

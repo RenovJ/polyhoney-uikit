@@ -1,16 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { Link } from "react-router-dom";
 import throttle from "lodash/throttle";
 import Overlay from "../../components/Overlay/Overlay";
 import Flex from "../../components/Box/Flex";
 import { useMatchBreakpoints } from "../../hooks";
-import Logo from "./components/Logo";
 import Panel from "./components/Panel";
 import UserBlock from "./components/UserBlock";
 import NetworkSelectModal from "./components/NetworkSelectModal";
+import { HamburgerIcon, HamburgerCloseIcon , LogoIcon } from "./icons";
 import { NavProps } from "./types";
 import { useModal } from "../Modal";
 import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
+import MenuButton from "./components/MenuButton";
 
 const Wrapper = styled.div`
   position: relative;
@@ -69,6 +71,44 @@ const HoverImg = styled.img`
     opacity: 0.65;
   }
 `
+const blink = keyframes`
+  0%,  100% { transform: scaleY(1); }
+  50% { transform:  scaleY(0.1); }
+`;
+
+const StyledLink = styled(Link)`
+  margin-right: 6px;
+  display: flex;
+  position: fixed;
+  top: 46.52px;
+  left: 50vw;
+  align-items: center;
+  .mobile-icon {
+    width: 32px;
+    ${({ theme }) => theme.mediaQueries.nav} {
+      display: none;
+    }
+  }
+  .desktop-icon {
+    width: 72.7px;
+    display: none;
+    ${({ theme }) => theme.mediaQueries.nav} {
+      display: block;
+    }
+  }
+  .right-eye {
+    animation-delay: 20ms;
+  }
+  &:hover {
+    .left-eye,
+    .right-eye {
+      transform-origin: center 60%;
+      animation-name: ${blink};
+      animation-duration: 350ms;
+      animation-iteration-count: 1;
+    }
+  }
+`;
 
 const Menu: React.FC<NavProps> = ({
   account,
@@ -89,6 +129,14 @@ const Menu: React.FC<NavProps> = ({
   const [isPushed, setIsPushed] = useState(!isMobile);
   const [showMenu, setShowMenu] = useState(true);
   const refPrevOffset = useRef(window.pageYOffset);
+  const homeLink = links.find((link) => link.label === "Home");
+  const href = homeLink?.href ?? "/"
+  const isAbsoluteUrl = href.startsWith("http");
+  const innerLogo = (
+    <>
+      <LogoIcon className="desktop-icon" isDark={isDark} />
+    </>
+  );
   const [onPresentNetworkSelectModal] = useModal(<NetworkSelectModal/>);
   useEffect(() => {
     const handleScroll = () => {
@@ -120,16 +168,25 @@ const Menu: React.FC<NavProps> = ({
   }, []);
 
   // Find the home link if provided
-  const homeLink = links.find((link) => link.label === "Home");
   return (
     <Wrapper>
       <StyledNav showMenu={showMenu}>
-        <Logo
-          isPushed={isPushed}
-          togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
-          isDark={isDark}
-          href={homeLink?.href ?? "/"}
-        />
+      <MenuButton aria-label="Toggle menu" onClick={() => setIsPushed(false)} mr="12px" mt="4px">
+        {isPushed ? (
+          <HamburgerCloseIcon width="30px" color="menuBackground" />
+        ) : (
+          <HamburgerIcon width="30px" color="menuBackground" />
+        )}
+      </MenuButton>
+      {isAbsoluteUrl ? (
+        <StyledLink as="a" href={href} aria-label="Honeyfarm">
+          {innerLogo}
+        </StyledLink>
+      ) : (
+        <StyledLink to={href} aria-label="Honeyfarm">
+          {innerLogo}
+        </StyledLink>
+      )}
         <Flex>
           <div>
             <Flex mr={isMobile ? 10 : 24}  width={isMobile ? 46: 109} height={46}  onClick={() => {onPresentNetworkSelectModal()}}>
