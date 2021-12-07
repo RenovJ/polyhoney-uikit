@@ -19,6 +19,7 @@ const UserBlock: React.FC<Props> = ({ account, login, logout }) => {
     <Wrapper>
       {account ? (
         <Button
+          width={89.26}
           scale="sm"
           variant="primary"
           onClick={() => {
@@ -29,6 +30,7 @@ const UserBlock: React.FC<Props> = ({ account, login, logout }) => {
         </Button>
       ) : (
         <Button
+          width={89.26}
           scale="sm"
           onClick={() => {
             onPresentConnectModal();

@@ -6,8 +6,9 @@ export const scaleVariants = {
     padding: "0 24px",
   },
   [scales.SM]: {
-    height: "32px",
-    padding: "0 16px",
+    height: "28.14px",
+    fontSize: "12px",
+    padding: "0 8px",
   },
   [scales.XS]: {
     height: "20px",
@@ -19,8 +20,8 @@ export const scaleVariants = {
 export const styleVariants = {
   [variants.PRIMARY]: {
     //backgroundColor: "primary",
-    background: "linear-gradient(#FDED95, #ECD86B)",
-    color: "#1F1F1F",
+    background: "linear-gradient(180deg, #E4C100 0%, #AC8600 100%)",
+    color: "#FFFFFF",
   },
   [variants.SECONDARY]: {
     backgroundColor: "transparent",

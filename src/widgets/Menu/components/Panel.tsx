@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { useMatchBreakpoints } from "../../../hooks";
 import PanelBody from "./PanelBody";
 import PanelFooter from "./PanelFooter";
 import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "../config";
@@ -66,8 +65,6 @@ const BusybeeImage = styled.img`
 
 const Panel: React.FC<Props> = (props) => {
   const { isPushed, showMenu } = props;
-  const { isXl } = useMatchBreakpoints();
-  const isMobile = isXl === false;
   return (
     <StyledPanel isPushed={isPushed} showMenu={showMenu}>
           
