@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 import throttle from "lodash/throttle";
 import Overlay from "../../components/Overlay/Overlay";
@@ -16,6 +16,8 @@ import {
   MENU_HEIGHT,
 } from "./config";
 import MenuButton from "./components/MenuButton";
+import Text from "../../components/Text/Text";
+import MenuLink from "./components/MenuLink";
 
 const Wrapper = styled.div`
   position: relative;
@@ -81,23 +83,13 @@ const HoverImg = styled.img`
 const StyledLink = styled(Link)`
   margin-right: 6px;
   display: flex;
-  position: fixed;
   top: 46.52px;
   align-items: center;
-  .mobile-icon {
-    left: calc(50%-37.5px);
-    width: 75px;
-    ${({ theme }) => theme.mediaQueries.nav} {
-      display: none;
-    }
-  }
-  .desktop-icon {
+  left: calc(50%-37.5px);
+  width: 75px;
+  ${({ theme }) => theme.mediaQueries.nav} {
     left: calc(50%-36.35px);
     width: 72.7px;
-    display: none;
-    ${({ theme }) => theme.mediaQueries.nav} {
-      display: block;
-    }
   }
 `;
 
@@ -126,7 +118,6 @@ const Menu: React.FC<NavProps> = ({
   const innerLogo = (
     <>
       <LogoIcon className="desktop-icon" isDark={isDark} />
-      <LogoIcon className="mobile-icon" isDark={isDark} />
     </>
   );
   const [onPresentNetworkSelectModal] = useModal(<NetworkSelectModal />);
@@ -160,68 +151,74 @@ const Menu: React.FC<NavProps> = ({
       window.removeEventListener("scroll", throttledHandleScroll);
     };
   }, []);
-
-  // Find the home link if provided
+  const leftMenu = ["Home", "Trade", "Farms", "Pools", "Vaults"]
+  const rightMenu = ["Royal Jelly", "NFT Jelly", "IHO", "Referrals", "Info"]
   return (
     <Wrapper>
       <CenterWrapper>
         <StyledNav showMenu={showMenu}>
           <CenterWrapper>
-            <Flex justifyContent={"space-between"} alignItems={"center"}>
-            {isMobile && (
-              <MenuButton
-                aria-label="Toggle menu"
-                onClick={() => setIsPushed(false)}
-                mr="12px"
-                mt="4px"
-              >
-                {isPushed ? (
-                  <HamburgerCloseIcon width="30px" color="menuBackground" />
-                ) : (
-                  <HamburgerIcon width="30px" color="menuBackground" />
-                )}
-              </MenuButton>
-            )}
-            <CakePrice cakePriceUsd={cakePriceUsd} />
-            {isAbsoluteUrl ? (
-              <StyledLink as="a" href={href} aria-label="Honeyfarm">
-                {innerLogo}
-              </StyledLink>
-            ) : (
-              <StyledLink to={href} aria-label="Honeyfarm">
-                {innerLogo}
-              </StyledLink>
-            )}
-            <Flex flexDirection={"column"} height={62.53} width={89.26}>
-              <UserBlock account={account} login={login} logout={logout} />
-              <div>
-                <Flex
-                  mr={isMobile ? 10 : 24}
-                  mt={6.25}
-                  width={isMobile ? 46 : 89.26}
-                  height={28.14}
-                  onClick={() => {
-                    onPresentNetworkSelectModal();
-                  }}
+            <Flex justifyContent={"space-between"} alignItems={"center"} mt={10}>
+              {isMobile && (
+                <MenuButton
+                  aria-label="Toggle menu"
+                  onClick={() => setIsPushed(false)}
+                  mr="12px"
+                  mt="4px"
                 >
-                  {isMobile ? (
-                    <HoverImg
-                      width={46}
-                      height={46}
-                      src="images/menu/to_avalanche.png"
-                    />
+                  {isPushed ? (
+                    <HamburgerCloseIcon width="30px" color="menuBackground" />
                   ) : (
-                    <HoverImg
-                      width={89.26}
-                      height={28.14}
-                      src="images/menu/to_avalanche.png"
-                    />
+                    <HamburgerIcon width="30px" color="menuBackground" />
                   )}
-                </Flex>
-              </div>
+                </MenuButton>
+              )}
+              <CakePrice cakePriceUsd={cakePriceUsd} />
+              <Flex justifyContent={"space-around"} flexGrow={1} >
+                {links.filter((link) => (leftMenu.includes(link.label))).map((link) => <MenuLink key={link.label} href={link.href ? link.href : "#"} aria-label={link.label}><Text color="#FFFFFF" fontSize={'16px'} fontWeight={"700"}>{link.items ? (<>{link.label + "  "}<span color="#FFFFFF" style={{ fontSize: "8px" }} >▼</span></>) : link.label}</Text></MenuLink>)}
+              </Flex>
+              {isAbsoluteUrl ? (
+                <StyledLink as="a" href={href} aria-label="Honeyfarm">
+                  {innerLogo}
+                </StyledLink>
+              ) : (
+                <StyledLink to={href} aria-label="Honeyfarm">
+                  {innerLogo}
+                </StyledLink>
+              )}
+              <Flex justifyContent={"space-around"} flexGrow={1}>
+                {links.filter((link) => (rightMenu.includes(link.label))).map((link) => <MenuLink key={link.label} href={link.href ? link.href : "#"} aria-label={link.label}><Text color="#FFFFFF" fontSize={'16px'} fontWeight={"700"}>{link.items ? (<>{link.label + "  "}<span color="#FFFFFF" style={{ fontSize: "8px" }} >▼</span></>) : link.label}</Text></MenuLink>)}
+              </Flex>
+              <Flex flexDirection={"column"} height={62.53} width={89.26}>
+                <UserBlock account={account} login={login} logout={logout} />
+                <div>
+                  <Flex
+                    mr={isMobile ? 10 : 24}
+                    mt={6.25}
+                    width={isMobile ? 46 : 89.26}
+                    height={28.14}
+                    onClick={() => {
+                      onPresentNetworkSelectModal();
+                    }}
+                  >
+                    {isMobile ? (
+                      <HoverImg
+                        width={46}
+                        height={46}
+                        src="images/menu/to_avalanche.png"
+                      />
+                    ) : (
+                      <HoverImg
+                        width={89.26}
+                        height={28.14}
+                        src="images/menu/to_avalanche.png"
+                      />
+                    )}
+                  </Flex>
+                </div>
+              </Flex>
             </Flex>
-            </Flex>
-           
+
           </CenterWrapper>
         </StyledNav>
 

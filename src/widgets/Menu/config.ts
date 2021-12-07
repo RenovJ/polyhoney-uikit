@@ -1,4 +1,4 @@
-import { LinkStatus } from "./types";
+import { LinkStatus, MenuEntry } from "./types";
 
 export const status = {
   LIVE: <LinkStatus>{
@@ -15,127 +15,147 @@ export const status = {
   },
 };
 
-export const links = [
+export const links: MenuEntry[] = [
   {
-    label: "Home",
-    icon: "HomeIcon",
-    href: "/",
+    label: 'Home',
+    icon: 'HomeIcon',
+    href: 'https://bee.honeyfarm.finance/',
   },
   {
-    label: "Trade",
-    icon: "TradeIcon",
+    label: 'Trade',
+    icon: 'TradeIcon',
     items: [
+      //      {
+      //        label: '1inch (Recommended)',
+      //        href: 'https://app.1inch.io/#/56/swap/BNB/0xc3EAE9b061Aa0e1B9BD3436080Dc57D2d63FEdc1',
+      //        target: "_blank"
+      //      },
       {
-        label: "Exchange",
-        href: "https://exchange.pancakeswap.finance",
+        label: 'Exchange',
+        href: 'https://pancakeswap.finance/swap?outputCurrency=0x1A8d7AC01d21991BF5249A3657C97b2B6d919222',
+        target: '_blank',
       },
       {
-        label: "Liquidity",
-        href: "https://exchange.pancakeswap.finance/#/pool",
+        label: 'Liquidity',
+        href: 'https://pancakeswap.finance/add/BNB/0x1A8d7AC01d21991BF5249A3657C97b2B6d919222',
+        target: '_blank',
+      },
+      {
+        label: 'Bridge (Anyswap)',
+        href: 'https://anyswap.exchange/#/bridge',
+        target: '_blank',
+      },
+      {
+        label: 'Multi Chain Swap',
+        href: 'changeNow',
       },
     ],
   },
   {
-    label: "Farms",
-    icon: "FarmIcon",
-    href: "/farms",
-    status: status.LIVE,
+    label: 'Farms',
+    icon: 'FarmIcon',
+    href: '/farms',
   },
   {
-    label: "Pools",
-    icon: "PoolIcon",
-    href: "/syrup",
+    label: 'Pools',
+    icon: 'PoolIcon',
+    href: '/pools',
   },
   {
-    label: 'Bridge',
+    label: 'Vaults',
+    icon: 'PoolIcon',
+    href: '/pools',
+  },
+  {
+    label: 'Royal Jelly',
+    icon: 'RoyalJellyIcon',
+    href: '/royaljelly',
+  },
+  {
+    label: 'NFT Jelly',
     icon: 'NftIcon',
-    href: 'https://bridge.cubdefi.com/',
+    href: '/nftjelly',
   },
   {
-    label: "Lottery",
-    icon: "TicketIcon",
-    href: "/lottery",
+    label: 'IHO',
+    icon: 'TicketIcon',
+    href: '/iho',
+  },
+  //  {
+  //    label: 'Honey Keeper Protocol',
+  //    icon: 'BuybackIcon',
+  //    href: '/buyback',
+  //  },
+  {
+    label: 'Referrals',
+    icon: 'GroupsIcon',
+    href: '/referrals',
   },
   {
-    label: "NFT",
-    icon: "NftIcon",
-    href: "/nft",
-  },
-  {
-    label: "Team Battle",
-    icon: "TeamBattleIcon",
-    href: "/competition",
-    status: status.SOON,
-  },
-  {
-    label: "Profile & Teams",
-    icon: "GroupsIcon",
-    status: status.LIVE,
+    label: 'Info',
+    icon: 'InfoIcon',
     items: [
       {
-        label: "Leaderboard",
-        href: "/teams",
-        status: status.NEW,
+        label: 'Layered Farming',
+        icon: 'LayerIcon',
+        items: [
+          {
+            label: 'Layer 1 Honey',
+            href: 'https://honey.honeyfarm.finance/',
+            target: '_blank',
+          },
+          {
+            label: 'Layer 2 Bear',
+            href: 'https://bear.honeyfarm.finance/',
+            target: '_blank',
+          },
+          {
+            label: 'Layer 3 Moon',
+            href: 'https://moon.honeyfarm.finance/',
+            target: '_blank',
+          },
+          {
+            label: 'Layer 4 Bee',
+            href: 'https://bee.honeyfarm.finance/',
+          },
+        ],
       },
       {
-        label: "YourProfile",
-        href: "/",
-      },
-    ],
-    calloutClass: "rainbow",
-  },
-  {
-    label: "Info",
-    icon: "InfoIcon",
-    items: [
-      {
-        label: "Overview",
-        href: "https://pancakeswap.info",
+        label: 'Partners',
+        icon: 'TeamBattleIcon',
+        href: '/partners',
       },
       {
-        label: "Tokens",
-        href: "https://pancakeswap.info/tokens",
+        label: 'Docs',
+        icon: 'TicketIcon',
+        href: 'https://docs.honeyfarm.finance/',
+        target: '_blank',
       },
       {
-        label: "Pairs",
-        href: "https://pancakeswap.info/pairs",
+        label: 'PancakeSwap',
+        href: 'https://pancakeswap.info/token/0x1A8d7AC01d21991BF5249A3657C97b2B6d919222',
+        target: '_blank',
       },
       {
-        label: "Accounts",
-        href: "https://pancakeswap.info/accounts",
-      },
-    ],
-  },
-  {
-    label: "IFO",
-    icon: "IfoIcon",
-    items: [
-      {
-        label: "Next",
-        href: "/ifo",
+        label: 'PooCoin',
+        href: 'https://poocoin.app/tokens/0x1A8d7AC01d21991BF5249A3657C97b2B6d919222',
+        target: '_blank',
       },
       {
-        label: "History",
-        href: "/ifo/history",
-      },
-    ],
-  },
-  {
-    label: "More",
-    icon: "MoreIcon",
-    items: [
-      {
-        label: "Github",
-        href: "https://github.com/CubFinance/",
+        label: 'ApeBoard',
+        href: 'https://apeboard.finance/',
+        target: '_blank',
       },
       {
-        label: "Blog",
-        href: "https://peakd.com/@leofinance",
+        label: 'Pacoca',
+        href: 'https://pacoca.io/',
+        target: '_blank',
       },
       {
-        label: "Discord",
-        href: "https://discord.gg/wWJxRE2k9B"
-      }
+        label: 'Arken Chart',
+        href: 'https://swap.arken.finance/tokens/bsc/0x1A8d7AC01d21991BF5249A3657C97b2B6d919222',
+        target: '_blank',
+      },
     ],
   },
 ];

@@ -30,6 +30,8 @@ const ResetCSS = createGlobalStyle`
   body {
     line-height: 1;
     font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   ol,
   ul {
@@ -65,8 +67,6 @@ const ResetCSS = createGlobalStyle`
   }
   {
     font-family: 'PT Sans Narrow', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 
   /* Number */

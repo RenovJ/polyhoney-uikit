@@ -30,9 +30,9 @@ export interface LinkStatus {
 }
 
 export interface MenuSubEntry {
-  icon: string;
+  icon?: string;
   label: string;
-  href: string;
+  href?: string;
   calloutClass?: string;
   status?: LinkStatus;
   target?: string;

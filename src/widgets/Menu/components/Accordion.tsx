@@ -8,7 +8,7 @@ import { ArrowDropDownIcon, ArrowDropUpIcon } from "../../../components/Svg";
 interface Props extends PushedProps {
   label: string;
   status?: LinkStatus;
-  icon: React.ReactElement;
+  icon?: React.ReactElement;
   initialOpenState?: boolean;
   className?: string;
   children: ReactNode;
