@@ -17,6 +17,7 @@ const getBottom = ({ position }: PositionProps) => {
 };
 
 const DropdownContent = styled.div<{ position: Position }>`
+
   width: max-content;
   display: none;
   flex-direction: column;
@@ -24,13 +25,16 @@ const DropdownContent = styled.div<{ position: Position }>`
   transform: translate(-50%, 0);
   left: ${getLeft};
   bottom: ${getBottom};
-  background-color: ${({ theme }) => theme.colors.headerBackground};
+  background: 
+    linear-gradient(#101010,#101010) padding-box, /*this is your grey background*/
+    linear-gradient(to bottom, #FFDA1E 0%, #FFFFFF 30%, #CFAE3D 100%) border-box;
   box-shadow: ${({ theme }) => theme.shadows.level1};
-  padding: 16px;
+  padding: 19px 15px 10px 15px;
   max-height: 500px;
-  overflow-y: auto;
+  border: 1.5px solid transparent;
+  align-items: center;
   z-index: ${({ theme }) => theme.zIndices.dropdown};
-  border-radius: ${({ theme }) => theme.radii.small};
+  border-radius: ${({ theme }) => theme.radii.default};
 `;
 
 const Container = styled.div`

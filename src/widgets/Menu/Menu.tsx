@@ -6,6 +6,7 @@ import Overlay from "../../components/Overlay/Overlay";
 import Flex from "../../components/Box/Flex";
 import { useMatchBreakpoints } from "../../hooks";
 import Panel from "./components/Panel";
+import PartialMenuItems from "./components/PartialMenuItems";
 import UserBlock from "./components/UserBlock";
 import NetworkSelectModal from "./components/NetworkSelectModal";
 import CakePrice from "./components/CakePrice";
@@ -16,8 +17,6 @@ import {
   MENU_HEIGHT,
 } from "./config";
 import MenuButton from "./components/MenuButton";
-import Text from "../../components/Text/Text";
-import MenuLink from "./components/MenuLink";
 
 const Wrapper = styled.div`
   position: relative;
@@ -151,8 +150,8 @@ const Menu: React.FC<NavProps> = ({
       window.removeEventListener("scroll", throttledHandleScroll);
     };
   }, []);
-  const leftMenu = ["Home", "Trade", "Farms", "Pools", "Vaults"]
-  const rightMenu = ["Royal Jelly", "NFT Jelly", "IHO", "Referrals", "Info"]
+
+
   return (
     <Wrapper>
       <CenterWrapper>
@@ -175,7 +174,7 @@ const Menu: React.FC<NavProps> = ({
               )}
               <CakePrice cakePriceUsd={cakePriceUsd} />
               <Flex justifyContent={"space-around"} flexGrow={1} >
-                {links.filter((link) => (leftMenu.includes(link.label))).map((link) => <MenuLink key={link.label} href={link.href ? link.href : "#"} aria-label={link.label}><Text color="#FFFFFF" fontSize={'16px'} fontWeight={"700"}>{link.items ? (<>{link.label + "  "}<span color="#FFFFFF" style={{ fontSize: "8px" }} >▼</span></>) : link.label}</Text></MenuLink>)}
+                <PartialMenuItems links={links.slice(0, 5)} isMobile={isMobile} />
               </Flex>
               {isAbsoluteUrl ? (
                 <StyledLink as="a" href={href} aria-label="Honeyfarm">
@@ -186,8 +185,8 @@ const Menu: React.FC<NavProps> = ({
                   {innerLogo}
                 </StyledLink>
               )}
-              <Flex justifyContent={"space-around"} flexGrow={1}>
-                {links.filter((link) => (rightMenu.includes(link.label))).map((link) => <MenuLink key={link.label} href={link.href ? link.href : "#"} aria-label={link.label}><Text color="#FFFFFF" fontSize={'16px'} fontWeight={"700"}>{link.items ? (<>{link.label + "  "}<span color="#FFFFFF" style={{ fontSize: "8px" }} >▼</span></>) : link.label}</Text></MenuLink>)}
+              <Flex justifyContent={"space-around"} flexGrow={1} mr={20}>
+                <PartialMenuItems links={links.slice(5, 10)} isMobile={isMobile} />
               </Flex>
               <Flex flexDirection={"column"} height={62.53} width={89.26}>
                 <UserBlock account={account} login={login} logout={logout} />
