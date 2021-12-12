@@ -11,6 +11,7 @@ interface Props extends PanelProps, PushedProps {
 }
 
 const BusybeeLinkContainer = styled.div<{ isPushed: boolean }>`
+  margin-top: 10px;
   margin-left: ${({ isPushed }) => (isPushed ? "10px" : "0px" )};
   margin-Right: ${({ isPushed }) => (isPushed ? "10px" : "0px" )};
   margin-bottom: 10px;

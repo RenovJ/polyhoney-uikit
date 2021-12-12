@@ -6,12 +6,11 @@ import { MenuEntry } from "../types";
 import Text from "../../../components/Text/Text";
 interface PartialMenuInterface {
   links: MenuEntry[]
-  isMobile: boolean;
 }
 
-const PartialMenuItems: React.FC<PartialMenuInterface> = ({ isMobile, links }) => {
+const PartialMenuItems: React.FC<PartialMenuInterface> = ({ links }) => {
   return (<>
-    {isMobile || links.map((link) => (
+    { links.map((link) => (
       link.items ? <Dropdown target={
         <MenuLink key={link.label} href={"#"} aria-label={link.label}>
           <Text color="#FFFFFF" fontSize={'16px'} fontWeight={"700"}>{link.label + "  "}<span color="#FFFFFF" style={{ fontSize: "8px" }} >▼</span></Text>

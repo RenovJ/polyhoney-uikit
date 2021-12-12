@@ -13,9 +13,7 @@ import CakePrice from "./components/CakePrice";
 import { HamburgerIcon, HamburgerCloseIcon, LogoIcon } from "./icons";
 import { NavProps } from "./types";
 import { useModal } from "../Modal";
-import {
-  MENU_HEIGHT,
-} from "./config";
+import { MENU_HEIGHT } from "./config";
 import MenuButton from "./components/MenuButton";
 
 const Wrapper = styled.div`
@@ -30,20 +28,29 @@ const CenterWrapper = styled.div`
   max-width: 1220px;
 `;
 const StyledNav = styled.nav<{ showMenu: boolean }>`
+  left: 0px;
+  padding: 0px 16px 0px 16px;
+  max-width: 1220px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-end;
   position: fixed;
-  top: ${({ showMenu }) => (showMenu ? 0 : `-${MENU_HEIGHT}px`)};
-  left: 0;
+  top: ${({ showMenu }) => (showMenu ? 0 : `-${MENU_HEIGHT+16}px`)};
   transition: top 0.2s;
   align-items: center;
-  padding-left: 8px;
-  padding-right: 8px;
   width: 100%;
-  height: ${MENU_HEIGHT}px;
+  height: ${MENU_HEIGHT+16}px;
   background-color: ${({ theme }) => theme.colors.headerBackground};
   z-index: 20;
   transform: translate3d(0, 0, 0);
+  ${({ theme }) => theme.mediaQueries.nav} {
+    
+    top: ${({ showMenu }) => (showMenu ? 0 : `-${MENU_HEIGHT}px`)};
+    height: ${MENU_HEIGHT}px;
+    width: calc(100% - 32px);
+    left: auto;
+    justify-content: center;
+  }
 `;
 
 const BodyWrapper = styled.div`
@@ -81,14 +88,26 @@ const HoverImg = styled.img`
 
 const StyledLink = styled(Link)`
   margin-right: 6px;
+  margin-left: 70px;
   display: flex;
   top: 46.52px;
   align-items: center;
-  left: calc(50%-37.5px);
   width: 75px;
+
   ${({ theme }) => theme.mediaQueries.nav} {
-    left: calc(50%-36.35px);
     width: 72.7px;
+    margin-left: 0px;
+  }
+`;
+
+const UserBlockWrapper = styled(Flex)`
+  flex-direction: column;
+  justify-content: center;
+  height: 50px;
+  width: 126px;
+  ${({ theme }) => theme.mediaQueries.nav} {
+    height: 62.53px;
+    width: 90px;
   }
 `;
 
@@ -116,7 +135,7 @@ const Menu: React.FC<NavProps> = ({
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <>
-      <LogoIcon className="desktop-icon" isDark={isDark} />
+      <LogoIcon isDark={isDark} />
     </>
   );
   const [onPresentNetworkSelectModal] = useModal(<NetworkSelectModal />);
@@ -151,17 +170,18 @@ const Menu: React.FC<NavProps> = ({
     };
   }, []);
 
-
   return (
     <Wrapper>
       <CenterWrapper>
         <StyledNav showMenu={showMenu}>
           <CenterWrapper>
-            <Flex justifyContent={"space-between"} alignItems={"center"} mt={10}>
-              {isMobile && (
+            <Flex alignItems={"center"} justifyContent={"space-between"} mt={isMobile ? 16 : 0}>
+              {isMobile ? (
                 <MenuButton
                   aria-label="Toggle menu"
-                  onClick={() => setIsPushed(false)}
+                  onClick={() =>
+                    setIsPushed((prevState: boolean) => !prevState)
+                  }
                   mr="12px"
                   mt="4px"
                 >
@@ -171,11 +191,18 @@ const Menu: React.FC<NavProps> = ({
                     <HamburgerIcon width="30px" color="menuBackground" />
                   )}
                 </MenuButton>
+              ) : (
+                <CakePrice cakePriceUsd={cakePriceUsd} />
               )}
-              <CakePrice cakePriceUsd={cakePriceUsd} />
-              <Flex justifyContent={"space-around"} flexGrow={1} >
-                <PartialMenuItems links={links.slice(0, 5)} isMobile={isMobile} />
-              </Flex>
+              {isMobile || (
+                <Flex
+                  justifyContent={"space-around"}
+                  width={"calc(100%/2 - 96px - 36.344px)"}
+                  height={24}
+                >
+                  <PartialMenuItems links={links.slice(0, 5)} />
+                </Flex>
+              )}
               {isAbsoluteUrl ? (
                 <StyledLink as="a" href={href} aria-label="Honeyfarm">
                   {innerLogo}
@@ -185,40 +212,45 @@ const Menu: React.FC<NavProps> = ({
                   {innerLogo}
                 </StyledLink>
               )}
-              <Flex justifyContent={"space-around"} flexGrow={1} mr={20}>
-                <PartialMenuItems links={links.slice(5, 10)} isMobile={isMobile} />
-              </Flex>
-              <Flex flexDirection={"column"} height={62.53} width={89.26}>
+              {isMobile || (
+                <Flex
+                  justifyContent={"space-around"}
+                  width={"calc(100%/2 - 96px - 36.344px)"}
+                  height={24}
+                >
+                  <PartialMenuItems links={links.slice(5, 10)} />
+                </Flex>
+              )}
+
+              <UserBlockWrapper>
                 <UserBlock account={account} login={login} logout={logout} />
                 <div>
-                  <Flex
-                    mr={isMobile ? 10 : 24}
-                    mt={6.25}
-                    width={isMobile ? 46 : 89.26}
-                    height={28.14}
-                    onClick={() => {
-                      onPresentNetworkSelectModal();
-                    }}
-                  >
-                    {isMobile ? (
+                  {isMobile || (
+                    <Flex
+                      mr={isMobile ? 10 : 24}
+                      mt={6.25}
+                      width={isMobile ? 46 : 90}
+                      height={30}
+                      onClick={() => {
+                        onPresentNetworkSelectModal();
+                      }}
+                    >
                       <HoverImg
-                        width={46}
-                        height={46}
+                        width={90}
+                        height={30}
                         src="images/menu/to_avalanche.png"
                       />
-                    ) : (
-                      <HoverImg
-                        width={89.26}
-                        height={28.14}
-                        src="images/menu/to_avalanche.png"
-                      />
-                    )}
-                  </Flex>
+                    </Flex>
+                  )}
                 </div>
-              </Flex>
+              </UserBlockWrapper>
             </Flex>
-
           </CenterWrapper>
+          {isMobile && (
+            <Flex mt={23.4} mb={23.4}>
+              <CakePrice cakePriceUsd={cakePriceUsd} />
+            </Flex>
+          )}
         </StyledNav>
 
         <BodyWrapper>

@@ -9,17 +9,35 @@ interface Props {
   logout: () => void;
 }
 const Wrapper = styled.div`
-  display : flex;
-  align-items : center;
+  display: flex;
+  align-items: center;
 `;
+
+const CustomButton = styled(Button)`
+  font-size: 24px;
+  height: 50px;
+  border-radius: 25px;
+  ${({ theme }) => theme.mediaQueries.nav} {
+    font-size: 12px;
+    height: 30px;
+    border-radius: 14px;
+  }
+`;
+
 const UserBlock: React.FC<Props> = ({ account, login, logout }) => {
-  const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(login, logout, account);
-  const accountEllipsis = account ? `${account.substring(0, 4)}...${account.substring(account.length - 4)}` : null;
+  const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(
+    login,
+    logout,
+    account
+  );
+  const accountEllipsis = account
+    ? `${account.substring(0, 4)}...${account.substring(account.length - 4)}`
+    : null;
   return (
     <Wrapper>
       {account ? (
-        <Button
-          width={89.26}
+        <CustomButton
+          width={"100%"}
           scale="sm"
           variant="primary"
           onClick={() => {
@@ -27,20 +45,23 @@ const UserBlock: React.FC<Props> = ({ account, login, logout }) => {
           }}
         >
           {accountEllipsis}
-        </Button>
+        </CustomButton>
       ) : (
-        <Button
-          width={89.26}
+        <CustomButton
+          width={"100%"}
           scale="sm"
           onClick={() => {
             onPresentConnectModal();
           }}
         >
           Connect
-        </Button>
+        </CustomButton>
       )}
     </Wrapper>
   );
 };
 
-export default React.memo(UserBlock, (prevProps, nextProps) => prevProps.account === nextProps.account);
+export default React.memo(
+  UserBlock,
+  (prevProps, nextProps) => prevProps.account === nextProps.account
+);

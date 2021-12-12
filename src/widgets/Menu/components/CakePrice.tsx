@@ -8,9 +8,10 @@ interface Props {
 }
 
 const PriceLink = styled.a`
-  display: flex;
-  align-items: center;
-  svg {
+margin-right: 6px;
+display: flex;
+align-items: center;
+ svg {
     transition: transform 0.3s;
   }
   :hover {
@@ -23,17 +24,21 @@ const PriceDIV = styled.div`
   background-image: url("images/menu/price_background.png");
   background-size: contain;
   background-repeat: no-repeat;
-  padding-top: 5px;
-  padding-left: 41.57px;
-  width: 89.26px;
-  height: 28.14px;
+  width: 90px;
+  height: 30px;
+`;
+const PriceText = styled(Text)`
+padding-top: 6px;
+padding-left: 41.57px;
+color:#FFFFFF;
+font-size: 12px;
 `;
 
 const CakePrice: React.FC<Props> = ({ cakePriceUsd }) => {
   return cakePriceUsd ? (
     <PriceLink href="https://bscscan.com/address/0x1A8d7AC01d21991BF5249A3657C97b2B6d919222" target="_blank">
       <PriceDIV >
-        <Text color="#FFFFFF" bold fontSize={'12px'}>{`$${cakePriceUsd.toFixed(2)}`}</Text>
+        <PriceText bold >{`$${cakePriceUsd.toFixed(2)}`}</PriceText>
       </PriceDIV>
     </PriceLink>
   ) : (
