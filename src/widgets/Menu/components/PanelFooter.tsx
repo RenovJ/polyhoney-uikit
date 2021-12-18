@@ -5,6 +5,7 @@ import IconButton from "../../../components/Button/IconButton";
 import { MENU_ENTRY_HEIGHT } from "../config";
 import { PanelProps, PushedProps } from "../types";
 import SocialLinks from "./SocialLinks";
+import CakePrice from "./CakePrice";
 
 interface Props extends PanelProps, PushedProps {}
 
@@ -21,25 +22,22 @@ const SocialEntry = styled.div`
   justify-content: space-between;
   height: ${MENU_ENTRY_HEIGHT}px;
   padding: 0 16px;
+  & svg{
+    transition: background-color 0.2s, opacity 0.2s;
+    &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
+      opacity: 0.65;
+    }
+  }
 `;
 
 const PanelFooter: React.FC<Props> = ({
-  isPushed,
-  pushNav,
+  cakePriceUsd
 }) => {
-  if (!isPushed) {
-    return (
-      <Container>
-        <IconButton variant="text" onClick={() => pushNav(true)}>
-          <CogIcon />
-        </IconButton>
-      </Container>
-    );
-  }
 
   return (
     <Container>
       <SocialEntry>
+        <CakePrice cakePriceUsd={cakePriceUsd} />
         <SocialLinks />
       </SocialEntry>
     </Container>

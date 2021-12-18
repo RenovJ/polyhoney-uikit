@@ -9,7 +9,7 @@ import Panel from "./components/Panel";
 import PartialMenuItems from "./components/PartialMenuItems";
 import UserBlock from "./components/UserBlock";
 import NetworkSelectModal from "./components/NetworkSelectModal";
-import CakePrice from "./components/CakePrice";
+import BeePrice from "./components/BeePrice";
 import { HamburgerIcon, HamburgerCloseIcon, LogoIcon } from "./icons";
 import { NavProps } from "./types";
 import { useModal } from "../Modal";
@@ -33,18 +33,17 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   max-width: 1220px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   position: fixed;
-  top: ${({ showMenu }) => (showMenu ? 0 : `-${MENU_HEIGHT+16}px`)};
+  top: ${({ showMenu }) => (showMenu ? 0 : `-${MENU_HEIGHT + 16}px`)};
   transition: top 0.2s;
   align-items: center;
   width: 100%;
-  height: ${MENU_HEIGHT+16}px;
+  height: ${MENU_HEIGHT - 30}px;
   background-color: ${({ theme }) => theme.colors.headerBackground};
   z-index: 20;
   transform: translate3d(0, 0, 0);
   ${({ theme }) => theme.mediaQueries.nav} {
-    
     top: ${({ showMenu }) => (showMenu ? 0 : `-${MENU_HEIGHT}px`)};
     height: ${MENU_HEIGHT}px;
     width: calc(100% - 32px);
@@ -60,12 +59,13 @@ const BodyWrapper = styled.div`
 
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   flex-grow: 1;
-  margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
+  margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT-30}px` : 0)};
   transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translate3d(0, 0, 0);
   max-width: 100%;
 
   ${({ theme }) => theme.mediaQueries.nav} {
+    margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
     max-width: 1220px;
   }
 `;
@@ -86,31 +86,43 @@ const HoverImg = styled.img`
   }
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(Link)<{margin?:number}>`
   margin-right: 6px;
-  margin-left: 70px;
+  margin-left: 0px;
   display: flex;
-  top: 46.52px;
+  justify-content: end;
   align-items: center;
-  width: 75px;
-
+  width: 145px;
+  height: 83px;
+  transition: background-color 0.2s, opacity 0.2s;
+  &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
+    opacity: 0.65;
+  }
   ${({ theme }) => theme.mediaQueries.nav} {
     width: 72.7px;
+    
+    height: 80px;
     margin-left: 0px;
   }
 `;
 
-const UserBlockWrapper = styled(Flex)`
-  flex-direction: column;
+const RightMenuBlockWrapper = styled(Flex)`
+  flex-direction: row;
   justify-content: center;
-  height: 50px;
-  width: 126px;
+
   ${({ theme }) => theme.mediaQueries.nav} {
-    height: 62.53px;
+    flex-direction: column;
+  }
+`;
+const UserBlockWrapper = styled.div`
+  margin-top: 7px;
+  width: 126px;
+
+  ${({ theme }) => theme.mediaQueries.nav} {
+    margin-top: 0px;
     width: 90px;
   }
 `;
-
 const Menu: React.FC<NavProps> = ({
   account,
   login,
@@ -175,8 +187,9 @@ const Menu: React.FC<NavProps> = ({
       <CenterWrapper>
         <StyledNav showMenu={showMenu}>
           <CenterWrapper>
-            <Flex alignItems={"center"} justifyContent={"space-between"} mt={isMobile ? 16 : 0}>
+            <Flex alignItems={"center"} justifyContent={"space-between"}>
               {isMobile ? (
+                    <Flex justifyContent={"center"}  alignItems={"center"}>
                 <MenuButton
                   aria-label="Toggle menu"
                   onClick={() =>
@@ -186,13 +199,24 @@ const Menu: React.FC<NavProps> = ({
                   mt="4px"
                 >
                   {isPushed ? (
-                    <HamburgerCloseIcon width="30px" color="menuBackground" />
+                      <HamburgerCloseIcon width="30px" color="menuBackground" />
                   ) : (
                     <HamburgerIcon width="30px" color="menuBackground" />
                   )}
                 </MenuButton>
+                {isPushed &&
+                        (isAbsoluteUrl ? (
+                          <StyledLink as="a" href={href} aria-label="Honeyfarm" margin={1} style={{width: 75}}>
+                            {innerLogo}
+                          </StyledLink>
+                        ) : (
+                          <StyledLink to={href} aria-label="Honeyfarm" margin={1} style={{width: 75}}>
+                            {innerLogo}
+                          </StyledLink>
+                        ))}
+                </Flex>
               ) : (
-                <CakePrice cakePriceUsd={cakePriceUsd} />
+                <BeePrice cakePriceUsd={cakePriceUsd} />
               )}
               {isMobile || (
                 <Flex
@@ -203,15 +227,16 @@ const Menu: React.FC<NavProps> = ({
                   <PartialMenuItems links={links.slice(0, 5)} />
                 </Flex>
               )}
-              {isAbsoluteUrl ? (
-                <StyledLink as="a" href={href} aria-label="Honeyfarm">
-                  {innerLogo}
-                </StyledLink>
-              ) : (
-                <StyledLink to={href} aria-label="Honeyfarm">
-                  {innerLogo}
-                </StyledLink>
-              )}
+              {(isPushed && isMobile) ||
+                (isAbsoluteUrl ? (
+                  <StyledLink as="a" href={href} aria-label="Honeyfarm">
+                    {innerLogo}
+                  </StyledLink>
+                ) : (
+                  <StyledLink to={href} aria-label="Honeyfarm">
+                    {innerLogo}
+                  </StyledLink>
+                ))}
               {isMobile || (
                 <Flex
                   justifyContent={"space-around"}
@@ -222,14 +247,24 @@ const Menu: React.FC<NavProps> = ({
                 </Flex>
               )}
 
-              <UserBlockWrapper>
-                <UserBlock account={account} login={login} logout={logout} />
+              <RightMenuBlockWrapper>
+                {isPushed && isMobile && (
+                  <HoverImg
+                    width={64}
+                    height={64}
+                    src="images/menu/to_avalanche_m.svg"
+                    style={{ marginRight: "10px" }}
+                  />
+                )}
+                <UserBlockWrapper>
+                  <UserBlock account={account} login={login} logout={logout} />
+                </UserBlockWrapper>
                 <div>
                   {isMobile || (
                     <Flex
-                      mr={isMobile ? 10 : 24}
+                      mr={24}
                       mt={6.25}
-                      width={isMobile ? 46 : 90}
+                      width={90}
                       height={30}
                       onClick={() => {
                         onPresentNetworkSelectModal();
@@ -243,14 +278,9 @@ const Menu: React.FC<NavProps> = ({
                     </Flex>
                   )}
                 </div>
-              </UserBlockWrapper>
+              </RightMenuBlockWrapper>
             </Flex>
           </CenterWrapper>
-          {isMobile && (
-            <Flex mt={23.4} mb={23.4}>
-              <CakePrice cakePriceUsd={cakePriceUsd} />
-            </Flex>
-          )}
         </StyledNav>
 
         <BodyWrapper>
@@ -270,6 +300,11 @@ const Menu: React.FC<NavProps> = ({
             />
           )}
           <Inner isPushed={isPushed} showMenu={showMenu}>
+            {isMobile && (
+              <Flex justifyContent={"center"} mb={15}>
+                <BeePrice cakePriceUsd={cakePriceUsd} />
+              </Flex>
+            )}
             {children}
           </Inner>
           <MobileOnlyOverlay

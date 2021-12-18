@@ -19,7 +19,7 @@ const BusybeeLinkContainer = styled.div<{ isPushed: boolean }>`
 
 const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   position: fixed;
-  padding-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT+18}px` : 0)};
+  padding-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT-30}px` : 0)};
   top: 0;
   left: 0;
   display: flex;
@@ -71,7 +71,7 @@ const Panel: React.FC<Props> = (props) => {
           
       <BusybeeLinkContainer isPushed={isPushed}>
         <a href="https://busybee.honeyfarm.finance">
-            <BusybeeImage height="36px" src="images/busybee_link2.png" />
+            <BusybeeImage width="100%" src="images/busybee_link2.png" />
         </a>
       </BusybeeLinkContainer>
       
