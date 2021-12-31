@@ -17,17 +17,18 @@ const getBottom = ({ position }: PositionProps) => {
 };
 
 const DropdownContent = styled.div<{ position: Position }>`
-
   width: max-content;
+  min-width: 100px;
   display: none;
   flex-direction: column;
   position: absolute;
   transform: translate(-50%, 0);
   left: ${getLeft};
   bottom: ${getBottom};
-  background: 
-    linear-gradient(#101010,#101010) padding-box, /*this is your grey background*/
-    linear-gradient(to bottom, #FFDA1E 0%, #FFFFFF 30%, #CFAE3D 100%) border-box;
+  background: linear-gradient(#101010, #101010) padding-box,
+    /*this is your grey background*/
+      linear-gradient(to bottom, #ffda1e 0%, #ffffff 30%, #cfae3d 100%)
+      border-box;
   box-shadow: ${({ theme }) => theme.shadows.level1};
   padding: 19px 15px 10px 15px;
   max-height: 500px;
@@ -44,7 +45,11 @@ const Container = styled.div`
   }
 `;
 
-const Dropdown: React.FC<DropdownProps> = ({ target, position = "bottom", children }) => {
+const Dropdown: React.FC<DropdownProps> = ({
+  target,
+  position = "bottom",
+  children,
+}) => {
   return (
     <Container>
       {target}

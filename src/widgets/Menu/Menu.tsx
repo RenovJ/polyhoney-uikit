@@ -15,6 +15,7 @@ import { NavProps } from "./types";
 import { useModal } from "../Modal";
 import { MENU_HEIGHT } from "./config";
 import MenuButton from "./components/MenuButton";
+import SocialLinks from "./components/SocialLinks";
 
 const Wrapper = styled.div`
   position: relative;
@@ -59,7 +60,7 @@ const BodyWrapper = styled.div`
 
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   flex-grow: 1;
-  margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT-30}px` : 0)};
+  margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT - 30}px` : 0)};
   transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translate3d(0, 0, 0);
   max-width: 100%;
@@ -86,7 +87,7 @@ const HoverImg = styled.img`
   }
 `;
 
-const StyledLink = styled(Link)<{margin?:number}>`
+const StyledLink = styled(Link)<{ margin?: number }>`
   margin-right: 6px;
   margin-left: 0px;
   display: flex;
@@ -100,7 +101,7 @@ const StyledLink = styled(Link)<{margin?:number}>`
   }
   ${({ theme }) => theme.mediaQueries.nav} {
     width: 72.7px;
-    
+
     height: 80px;
     margin-left: 0px;
   }
@@ -123,6 +124,17 @@ const UserBlockWrapper = styled.div`
     width: 90px;
   }
 `;
+const Footer = styled(Flex)`
+  height: 46.4px;
+  padding: 11.1px;
+  justify-content: center;
+  background-color: ${({ theme }) => theme.nav.background};
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+`;
+
 const Menu: React.FC<NavProps> = ({
   account,
   login,
@@ -189,31 +201,42 @@ const Menu: React.FC<NavProps> = ({
           <CenterWrapper>
             <Flex alignItems={"center"} justifyContent={"space-between"}>
               {isMobile ? (
-                    <Flex justifyContent={"center"}  alignItems={"center"}>
-                <MenuButton
-                  aria-label="Toggle menu"
-                  onClick={() =>
-                    setIsPushed((prevState: boolean) => !prevState)
-                  }
-                  mr="12px"
-                  mt="4px"
-                >
-                  {isPushed ? (
+                <Flex justifyContent={"center"} alignItems={"center"}>
+                  <MenuButton
+                    aria-label="Toggle menu"
+                    onClick={() =>
+                      setIsPushed((prevState: boolean) => !prevState)
+                    }
+                    mr="12px"
+                    mt="4px"
+                  >
+                    {isPushed ? (
                       <HamburgerCloseIcon width="30px" color="menuBackground" />
-                  ) : (
-                    <HamburgerIcon width="30px" color="menuBackground" />
-                  )}
-                </MenuButton>
-                {isPushed &&
-                        (isAbsoluteUrl ? (
-                          <StyledLink as="a" href={href} aria-label="Honeyfarm" margin={1} style={{width: 75}}>
-                            {innerLogo}
-                          </StyledLink>
-                        ) : (
-                          <StyledLink to={href} aria-label="Honeyfarm" margin={1} style={{width: 75}}>
-                            {innerLogo}
-                          </StyledLink>
-                        ))}
+                    ) : (
+                      <HamburgerIcon width="30px" color="menuBackground" />
+                    )}
+                  </MenuButton>
+                  {isPushed &&
+                    (isAbsoluteUrl ? (
+                      <StyledLink
+                        as="a"
+                        href={href}
+                        aria-label="Honeyfarm"
+                        margin={1}
+                        style={{ width: 75 }}
+                      >
+                        {innerLogo}
+                      </StyledLink>
+                    ) : (
+                      <StyledLink
+                        to={href}
+                        aria-label="Honeyfarm"
+                        margin={1}
+                        style={{ width: 75 }}
+                      >
+                        {innerLogo}
+                      </StyledLink>
+                    ))}
                 </Flex>
               ) : (
                 <BeePrice cakePriceUsd={cakePriceUsd} />
@@ -224,7 +247,7 @@ const Menu: React.FC<NavProps> = ({
                   width={"calc(100%/2 - 96px - 36.344px)"}
                   height={24}
                 >
-                  <PartialMenuItems links={links.slice(0, 5)} />
+                  <PartialMenuItems links={links.slice(0, 4)} />
                 </Flex>
               )}
               {(isPushed && isMobile) ||
@@ -243,7 +266,7 @@ const Menu: React.FC<NavProps> = ({
                   width={"calc(100%/2 - 96px - 36.344px)"}
                   height={24}
                 >
-                  <PartialMenuItems links={links.slice(5, 10)} />
+                  <PartialMenuItems links={links.slice(4, 8)} />
                 </Flex>
               )}
 
@@ -314,6 +337,11 @@ const Menu: React.FC<NavProps> = ({
           />
         </BodyWrapper>
       </CenterWrapper>
+      {isMobile || (
+        <Footer>
+          <SocialLinks isMainFooter />
+        </Footer>
+      )}
     </Wrapper>
   );
 };
