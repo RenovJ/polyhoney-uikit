@@ -19,7 +19,7 @@ export const links: MenuEntry[] = [
   {
     label: 'Home',
     icon: 'HomeIcon',
-    href: 'https://bee.honeyfarm.finance/',
+    href: '/',
   },
   {
     label: 'Trade',

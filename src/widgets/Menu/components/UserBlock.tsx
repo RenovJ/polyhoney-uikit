@@ -14,8 +14,8 @@ const Wrapper = styled.div`
 `;
 
 const CustomButton = styled(Button)`
-  font-size: 24px;
-  height: 50px;
+  font-size: 16px;
+  height: 30px;
   border-radius: 25px;
   ${({ theme }) => theme.mediaQueries.nav} {
     font-size: 12px;

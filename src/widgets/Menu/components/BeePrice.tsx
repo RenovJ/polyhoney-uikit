@@ -21,22 +21,21 @@ align-items: center;
   }
 `;
 const PriceDIV = styled.div`
-  background-image: url("images/menu/price_background_m.svg");
-  width: 171px;
-  height: 59px;
+  background-image: url("images/menu/price_background.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 121px;
+  height: 41.74px;
   ${({ theme }) => theme.mediaQueries.nav} {
-    background-image: url("images/menu/price_background.png");
-    background-size: contain;
-    background-repeat: no-repeat;
     width: 90px;
     height: 30px;
   }
 `;
 const PriceText = styled(Text)`
-  padding-top: 10px;
-  padding-left: 78px;
+  padding-top: 5px;
+  padding-left: 58px;
   color:#FFFFFF;
-  font-size: 24px;
+  font-size: 20px;
   ${({ theme }) => theme.mediaQueries.nav} {
     padding-top: 6px;
     padding-left: 41.57px;

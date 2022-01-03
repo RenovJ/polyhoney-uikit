@@ -6,7 +6,6 @@ import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "../confi
 import { PanelProps, PushedProps } from "../types";
 
 interface Props extends PanelProps, PushedProps {
-  showMenu: boolean;
   isMobile: boolean;
 }
 
@@ -19,7 +18,7 @@ const BusybeeLinkContainer = styled.div<{ isPushed: boolean }>`
 
 const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   position: fixed;
-  padding-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT-30}px` : 0)};
+  padding-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT-70}px` : 0)};
   top: 0;
   left: 0;
   display: flex;
@@ -65,9 +64,9 @@ const BusybeeImage = styled.img`
 
 
 const Panel: React.FC<Props> = (props) => {
-  const { isPushed, showMenu } = props;
+  const { isPushed } = props;
   return (
-    <StyledPanel isPushed={isPushed} showMenu={showMenu}>
+    <StyledPanel isPushed={isPushed} showMenu={true}>
           
       <BusybeeLinkContainer isPushed={isPushed}>
         <a href="https://busybee.honeyfarm.finance">

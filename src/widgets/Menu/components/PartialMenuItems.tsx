@@ -16,7 +16,7 @@ const PartialMenuItems: React.FC<PartialMenuInterface> = ({ links }) => {
           <Dropdown
             target={
               <MenuLink key={link.label} href={"#"} aria-label={link.label}>
-                <Text color="#FFFFFF" fontSize={"22px"} fontWeight={"700"}>
+                <Text color="#FFFFFF" fontSize={"20px"} fontWeight={"700"}>
                   {link.label + "  "}
                   <span color="#FFFFFF" style={{ fontSize: "8px" }}>
                     ▼
@@ -46,7 +46,7 @@ const PartialMenuItems: React.FC<PartialMenuInterface> = ({ links }) => {
           </Dropdown>
         ) : (
           <MenuLink key={link.label} href={link.href} aria-label={link.label}>
-            <Text color="#FFFFFF" fontSize={"22px"} fontWeight={"700"}>
+            <Text color="#FFFFFF" fontSize={"20px"} fontWeight={"700"}>
               {link.label}{" "}
             </Text>
           </MenuLink>

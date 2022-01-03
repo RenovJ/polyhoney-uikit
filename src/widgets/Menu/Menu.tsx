@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import throttle from "lodash/throttle";
 import Overlay from "../../components/Overlay/Overlay";
 import Flex from "../../components/Box/Flex";
 import { useMatchBreakpoints } from "../../hooks";
@@ -28,7 +27,7 @@ const CenterWrapper = styled.div`
   width: 100%;
   max-width: 1220px;
 `;
-const StyledNav = styled.nav<{ showMenu: boolean }>`
+const StyledNav = styled.nav`
   left: 0px;
   padding: 0px 16px 0px 16px;
   max-width: 1220px;
@@ -36,16 +35,17 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   flex-direction: column;
   justify-content: center;
   position: fixed;
-  top: ${({ showMenu }) => (showMenu ? 0 : `-${MENU_HEIGHT + 16}px`)};
+  top: 0;
   transition: top 0.2s;
   align-items: center;
   width: 100%;
-  height: ${MENU_HEIGHT - 30}px;
+  height: ${MENU_HEIGHT - 70}px;
   background-color: ${({ theme }) => theme.colors.headerBackground};
   z-index: 20;
   transform: translate3d(0, 0, 0);
   ${({ theme }) => theme.mediaQueries.nav} {
-    top: ${({ showMenu }) => (showMenu ? 0 : `-${MENU_HEIGHT}px`)};
+    top: 0;
+    position: absolute;
     height: ${MENU_HEIGHT}px;
     width: calc(100% - 32px);
     left: auto;
@@ -58,15 +58,15 @@ const BodyWrapper = styled.div`
   display: flex;
 `;
 
-const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
+const Inner = styled.div<{ isPushed: boolean;}>`
   flex-grow: 1;
   margin-bottom: 46.4px;
-  margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT - 30}px` : 0)};
+  margin-top: ${MENU_HEIGHT - 60}px;
   transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translate3d(0, 0, 0);
   max-width: 100%;
   ${({ theme }) => theme.mediaQueries.nav} {
-    margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
+    margin-top: ${MENU_HEIGHT}px;
     max-width: 1220px;
   }
 `;
@@ -88,22 +88,20 @@ const HoverImg = styled.img`
 `;
 
 const StyledLink = styled(Link)<{ margin?: number }>`
-  margin-right: 6px;
-  margin-left: 0px;
+  margin-right: ${({ margin }) => margin? margin:6}px;
+  margin-left: ${({ margin }) => margin? margin:0}px;
   display: flex;
   justify-content: end;
   align-items: center;
-  width: 145px;
-  height: 83px;
+  width: 87px;
+  height: 55.3px;
   transition: background-color 0.2s, opacity 0.2s;
   &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
     opacity: 0.65;
   }
   ${({ theme }) => theme.mediaQueries.nav} {
     width: 72.7px;
-
     height: 80px;
-    margin-left: 0px;
   }
 `;
 
@@ -117,11 +115,10 @@ const RightMenuBlockWrapper = styled(Flex)`
 `;
 const UserBlockWrapper = styled.div`
   margin-top: 7px;
-  width: 126px;
+  width: 90px;
 
   ${({ theme }) => theme.mediaQueries.nav} {
     margin-top: 0px;
-    width: 90px;
   }
 `;
 const Footer = styled(Flex)`
@@ -152,8 +149,6 @@ const Menu: React.FC<NavProps> = ({
   const { isXl } = useMatchBreakpoints();
   const isMobile = isXl === false;
   const [isPushed, setIsPushed] = useState(!isMobile);
-  const [showMenu, setShowMenu] = useState(true);
-  const refPrevOffset = useRef(window.pageYOffset);
   const homeLink = links.find((link) => link.label === "Home");
   const href = homeLink?.href ?? "/";
   const isAbsoluteUrl = href.startsWith("http");
@@ -163,41 +158,11 @@ const Menu: React.FC<NavProps> = ({
     </>
   );
   const [onPresentNetworkSelectModal] = useModal(<NetworkSelectModal />);
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentOffset = window.pageYOffset;
-      const isBottomOfPage =
-        window.document.body.clientHeight ===
-        currentOffset + window.innerHeight;
-      const isTopOfPage = currentOffset === 0;
-      // Always show the menu when user reach the top
-      if (isTopOfPage) {
-        setShowMenu(true);
-      }
-      // Avoid triggering anything at the bottom because of layout shift
-      else if (!isBottomOfPage) {
-        if (currentOffset < refPrevOffset.current) {
-          // Has scroll up
-          setShowMenu(true);
-        } else {
-          // Has scroll down
-          setShowMenu(false);
-        }
-      }
-      refPrevOffset.current = currentOffset;
-    };
-    const throttledHandleScroll = throttle(handleScroll, 200);
-
-    window.addEventListener("scroll", throttledHandleScroll);
-    return () => {
-      window.removeEventListener("scroll", throttledHandleScroll);
-    };
-  }, []);
 
   return (
     <Wrapper>
       <CenterWrapper>
-        <StyledNav showMenu={showMenu}>
+        <StyledNav>
           <CenterWrapper>
             <Flex alignItems={"center"} justifyContent={"space-between"}>
               {isMobile ? (
@@ -252,11 +217,11 @@ const Menu: React.FC<NavProps> = ({
               )}
               {(isPushed && isMobile) ||
                 (isAbsoluteUrl ? (
-                  <StyledLink as="a" href={href} aria-label="Honeyfarm">
+                  <StyledLink as="a" href={href} aria-label="Honeyfarm" margin={isMobile ? undefined :40}>
                     {innerLogo}
                   </StyledLink>
                 ) : (
-                  <StyledLink to={href} aria-label="Honeyfarm">
+                  <StyledLink to={href} aria-label="Honeyfarm" margin={isMobile ? undefined :40}>
                     {innerLogo}
                   </StyledLink>
                 ))}
@@ -273,10 +238,13 @@ const Menu: React.FC<NavProps> = ({
               <RightMenuBlockWrapper>
                 {isPushed && isMobile && (
                   <HoverImg
-                    width={64}
-                    height={64}
+                    width={42.24}
+                    height={42.24}
                     src="images/menu/to_avalanche_m.svg"
                     style={{ marginRight: "10px" }}
+                    onClick={() => {
+                      onPresentNetworkSelectModal();
+                    }}
                   />
                 )}
                 <UserBlockWrapper>
@@ -311,7 +279,6 @@ const Menu: React.FC<NavProps> = ({
             <Panel
               isPushed={isPushed}
               isMobile={isMobile}
-              showMenu={showMenu}
               isDark={isDark}
               toggleTheme={toggleTheme}
               langs={langs}
@@ -322,7 +289,7 @@ const Menu: React.FC<NavProps> = ({
               links={links}
             />
           )}
-          <Inner isPushed={isPushed} showMenu={showMenu}>
+          <Inner isPushed={isPushed}>
             {isMobile && (
               <Flex justifyContent={"center"} mb={15}>
                 <BeePrice cakePriceUsd={cakePriceUsd} />
