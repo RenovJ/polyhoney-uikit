@@ -58,7 +58,7 @@ const BodyWrapper = styled.div`
   display: flex;
 `;
 
-const Inner = styled.div<{ isPushed: boolean;}>`
+const Inner = styled.div<{ isPushed: boolean; }>`
   flex-grow: 1;
   margin-bottom: 46.4px;
   margin-top: ${MENU_HEIGHT - 60}px;
@@ -87,9 +87,9 @@ const HoverImg = styled.img`
   }
 `;
 
-const StyledLink = styled(Link)<{ margin?: number }>`
-  margin-right: ${({ margin }) => margin? margin:6}px;
-  margin-left: ${({ margin }) => margin? margin:0}px;
+const StyledLink = styled(Link) <{ margin?: number }>`
+  margin-right: ${({ margin }) => margin ? margin : 6}px;
+  margin-left: ${({ margin }) => margin ? margin : 0}px;
   display: flex;
   justify-content: end;
   align-items: center;
@@ -210,18 +210,18 @@ const Menu: React.FC<NavProps> = ({
                 <Flex
                   justifyContent={"space-around"}
                   width={"calc(100%/2 - 96px - 36.344px)"}
-                  height={24}
+                  height={30}
                 >
                   <PartialMenuItems links={links.slice(0, 4)} />
                 </Flex>
               )}
               {(isPushed && isMobile) ||
                 (isAbsoluteUrl ? (
-                  <StyledLink as="a" href={href} aria-label="Honeyfarm" margin={isMobile ? undefined :40}>
+                  <StyledLink as="a" href={href} aria-label="Honeyfarm" margin={isMobile ? undefined : 40}>
                     {innerLogo}
                   </StyledLink>
                 ) : (
-                  <StyledLink to={href} aria-label="Honeyfarm" margin={isMobile ? undefined :40}>
+                  <StyledLink to={href} aria-label="Honeyfarm" margin={isMobile ? undefined : 40}>
                     {innerLogo}
                   </StyledLink>
                 ))}
@@ -229,7 +229,7 @@ const Menu: React.FC<NavProps> = ({
                 <Flex
                   justifyContent={"space-around"}
                   width={"calc(100%/2 - 96px - 36.344px)"}
-                  height={24}
+                  height={30}
                 >
                   <PartialMenuItems links={links.slice(4, 8)} />
                 </Flex>
