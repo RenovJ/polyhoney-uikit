@@ -23,7 +23,9 @@ const scaleKeyValues = {
   },
 };
 
-const getScale = (property: ScaleKeys) => ({ scale = scales.MD }: ToggleProps) => {
+const getScale = (property: ScaleKeys) => ({
+  scale = scales.MD,
+}: ToggleProps) => {
   return scaleKeyValues[scale][property];
 };
 
@@ -63,7 +65,8 @@ export const Input = styled.input<InputProps>`
 
 const StyledToggle = styled.div<ToggleProps>`
   align-items: center;
-  background-color: ${({ theme, checked }) => theme.colors[checked ? "success" : "input"]};
+  background-color: ${({ theme, checked }) =>
+    theme.colors[checked ? "secondary" : "input"]};
   border-radius: 24px;
   box-shadow: ${({ theme }) => theme.shadows.inset};
   cursor: pointer;
