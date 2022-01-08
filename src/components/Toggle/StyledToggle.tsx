@@ -65,8 +65,7 @@ export const Input = styled.input<InputProps>`
 
 const StyledToggle = styled.div<ToggleProps>`
   align-items: center;
-  background-color: ${({ theme, checked }) =>
-    theme.colors[checked ? "secondary" : "input"]};
+  background-color: ${({ theme }) => theme.colors.input};
   border-radius: 24px;
   box-shadow: ${({ theme }) => theme.shadows.inset};
   cursor: pointer;
