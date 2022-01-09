@@ -18,7 +18,7 @@ const CustomButton = styled(Button)`
   height: 30px;
   border-radius: 25px;
   ${({ theme }) => theme.mediaQueries.nav} {
-    font-size: 12px;
+    font-size: 14px;
     height: 30px;
     border-radius: 14px;
   }
