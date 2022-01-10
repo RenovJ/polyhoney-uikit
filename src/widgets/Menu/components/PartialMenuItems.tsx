@@ -4,11 +4,15 @@ import { Dropdown } from "../../../components/Dropdown";
 import MenuLink from "./MenuLink";
 import { MenuEntry } from "../types";
 import Text from "../../../components/Text/Text";
+import ChangeNowModal from "./ChangeNowModal";
+import { useModal } from "../../Modal";
+
 interface PartialMenuInterface {
   links: MenuEntry[];
 }
 
 const PartialMenuItems: React.FC<PartialMenuInterface> = ({ links }) => {
+  const [onPresentChangeNowModal] = useModal(<ChangeNowModal />);
   return (
     <>
       {links.map((link) =>
@@ -30,8 +34,16 @@ const PartialMenuItems: React.FC<PartialMenuInterface> = ({ links }) => {
               .map((innerLink) => (
                 <MenuLink
                   key={innerLink.label}
-                  href={innerLink.href}
+                  href={innerLink.href === "changeNow" ? "#" : innerLink.href}
                   aria-label={innerLink.label}
+                  target={innerLink.target ? innerLink.target : "_self"}
+                  onClick={
+                    innerLink.href === "changeNow"
+                      ? () => {
+                          onPresentChangeNowModal();
+                        }
+                      : undefined
+                  }
                 >
                   <Text
                     mb={9}
@@ -45,7 +57,12 @@ const PartialMenuItems: React.FC<PartialMenuInterface> = ({ links }) => {
               ))}
           </Dropdown>
         ) : (
-          <MenuLink key={link.label} href={link.href} aria-label={link.label}>
+          <MenuLink
+            key={link.label}
+            href={link.href}
+            aria-label={link.label}
+            target={link.target ? link.target : "_self"}
+          >
             <Text color="#FFFFFF" fontSize={"20px"} fontWeight={"700"}>
               {link.label}{" "}
             </Text>
