@@ -11,12 +11,17 @@ import NetworkSelectModal from "./components/NetworkSelectModal";
 import { NavProps } from "./types";
 import { useModal } from "../Modal";
 // import Avatar from "./components/Avatar";
-import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
+import {
+  MENU_HEIGHT,
+  SIDEBAR_WIDTH_REDUCED,
+  SIDEBAR_WIDTH_FULL,
+} from "./config";
 
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  font-family: 'PT Sans Narrow', sans-serif;
+  font-family: "PT Sans Narrow", sans-serif;
+  background-image: "/images/background.jpeg";
 `;
 
 const StyledNav = styled.nav<{ showMenu: boolean }>`
@@ -50,8 +55,12 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   max-width: 100%;
 
   ${({ theme }) => theme.mediaQueries.nav} {
-    margin-left: ${({ isPushed }) => `${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED}px`};
-    max-width: ${({ isPushed }) => `calc(100% - ${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED}px)`};
+    margin-left: ${({ isPushed }) =>
+      `${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED}px`};
+    max-width: ${({ isPushed }) =>
+      `calc(100% - ${
+        isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED
+      }px)`};
   }
 `;
 
@@ -69,7 +78,7 @@ const HoverImg = styled.img`
   &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
     opacity: 0.65;
   }
-`
+`;
 
 const Menu: React.FC<NavProps> = ({
   account,
@@ -90,11 +99,13 @@ const Menu: React.FC<NavProps> = ({
   const [isPushed, setIsPushed] = useState(!isMobile);
   const [showMenu, setShowMenu] = useState(true);
   const refPrevOffset = useRef(window.pageYOffset);
-  const [onPresentNetworkSelectModal] = useModal(<NetworkSelectModal/>);
+  const [onPresentNetworkSelectModal] = useModal(<NetworkSelectModal />);
   useEffect(() => {
     const handleScroll = () => {
       const currentOffset = window.pageYOffset;
-      const isBottomOfPage = window.document.body.clientHeight === currentOffset + window.innerHeight;
+      const isBottomOfPage =
+        window.document.body.clientHeight ===
+        currentOffset + window.innerHeight;
       const isTopOfPage = currentOffset === 0;
       // Always show the menu when user reach the top
       if (isTopOfPage) {
@@ -133,8 +144,27 @@ const Menu: React.FC<NavProps> = ({
         />
         <Flex>
           <div>
-            <Flex mr={isMobile ? 10 : 24}  width={isMobile ? 46: 109} height={46}  onClick={() => {onPresentNetworkSelectModal()}}>
-                {isMobile?<HoverImg width={46} height={46} src="images/modal_bsc_bt.png" />:<HoverImg width={109} height={46} src="images/ic_bsc_modal_BT.png" />}
+            <Flex
+              mr={isMobile ? 10 : 24}
+              width={isMobile ? 46 : 109}
+              height={46}
+              onClick={() => {
+                onPresentNetworkSelectModal();
+              }}
+            >
+              {isMobile ? (
+                <HoverImg
+                  width={46}
+                  height={46}
+                  src="images/modal_bsc_bt.png"
+                />
+              ) : (
+                <HoverImg
+                  width={109}
+                  height={46}
+                  src="images/ic_bsc_modal_BT.png"
+                />
+              )}
             </Flex>
           </div>
           <UserBlock account={account} login={login} logout={logout} />
@@ -158,7 +188,11 @@ const Menu: React.FC<NavProps> = ({
         <Inner isPushed={isPushed} showMenu={showMenu}>
           {children}
         </Inner>
-        <MobileOnlyOverlay show={isPushed} onClick={() => setIsPushed(false)} role="presentation" />
+        <MobileOnlyOverlay
+          show={isPushed}
+          onClick={() => setIsPushed(false)}
+          role="presentation"
+        />
         {/*
         <FloatingBanner>
           <a href="" target="_blank">
