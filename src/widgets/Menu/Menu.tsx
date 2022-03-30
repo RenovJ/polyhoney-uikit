@@ -21,7 +21,17 @@ const Wrapper = styled.div`
   position: relative;
   width: 100%;
   font-family: "PT Sans Narrow", sans-serif;
-  background-image: "/images/background.jpeg";
+  & > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  & > img.background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
 `;
 
 const StyledNav = styled.nav<{ showMenu: boolean }>`
@@ -93,6 +103,7 @@ const Menu: React.FC<NavProps> = ({
   links,
   // profile,
   children,
+  diceBackground,
 }) => {
   const { isXl } = useMatchBreakpoints();
   const isMobile = isXl === false;
@@ -135,6 +146,8 @@ const Menu: React.FC<NavProps> = ({
   const homeLink = links.find((link) => link.label === "Home");
   return (
     <Wrapper>
+      <img className="background-img" src="/images/background.jpeg" />
+      {diceBackground && <img src="/images/bg_boardgame.png"></img>}
       <StyledNav showMenu={showMenu}>
         <Logo
           isPushed={isPushed}

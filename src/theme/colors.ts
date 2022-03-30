@@ -32,7 +32,7 @@ export const lightColors: Colors = {
   textMenu: "#FCE984",
   textMenuHovered: "#333025",
   headerBackground: "#FFFFFF",
-  menuBackground: "#070724",
+  menuBackground: "rgba(255, 255, 255, 0.3)",
   menuBackgroundHovered: "#332B17",
   borderColor: "#E9EAEB",
   gradients: {
