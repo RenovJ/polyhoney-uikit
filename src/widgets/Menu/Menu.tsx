@@ -28,9 +28,10 @@ const Wrapper = styled.div`
   }
   & > img.background-img {
     position: absolute;
-    top: 0;
-    left: 0;
+    min-height: 100vh;
     height: 100%;
+    width: 100%;
+    object-fit: fill;
   }
 `;
 
@@ -46,8 +47,6 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   padding-right: 16px;
   width: 100%;
   height: ${MENU_HEIGHT}px;
-  background-color: ${({ theme }) => theme.colors.headerBackground};
-  border-bottom: solid 2px rgba(133, 133, 133, 0.1);
   z-index: 20;
   transform: translate3d(0, 0, 0);
 `;
@@ -155,34 +154,11 @@ const Menu: React.FC<NavProps> = ({
           isDark={isDark}
           href={homeLink?.href ?? "/"}
         />
-        <Flex>
-          <div>
-            <Flex
-              mr={isMobile ? 10 : 24}
-              width={isMobile ? 46 : 109}
-              height={46}
-              onClick={() => {
-                onPresentNetworkSelectModal();
-              }}
-            >
-              {isMobile ? (
-                <HoverImg
-                  width={46}
-                  height={46}
-                  src="images/modal_bsc_bt.png"
-                />
-              ) : (
-                <HoverImg
-                  width={109}
-                  height={46}
-                  src="images/ic_bsc_modal_BT.png"
-                />
-              )}
-            </Flex>
-          </div>
+        <Flex maxWidth={1064} width="100%" justifyContent={"flex-end"}>
           <UserBlock account={account} login={login} logout={logout} />
           {/* profile && <Avatar profile={profile} /> */}
         </Flex>
+        <Flex />
       </StyledNav>
       <BodyWrapper>
         <Panel

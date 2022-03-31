@@ -1,7 +1,11 @@
 import React, { ReactNode, useState } from "react";
 import styled from "styled-components";
 import { MENU_ENTRY_HEIGHT } from "../config";
-import { LinkLabel, LinkStatus as LinkStatusComponent, MenuEntry } from "./MenuEntry";
+import {
+  LinkLabel,
+  LinkStatus as LinkStatusComponent,
+  MenuEntry,
+} from "./MenuEntry";
 import { LinkStatus, PushedProps } from "../types";
 import { ArrowDropDownIcon, ArrowDropUpIcon } from "../../../components/Svg";
 
@@ -22,11 +26,16 @@ const Container = styled.div`
   flex-shrink: 0;
 `;
 
-const AccordionContent = styled.div<{ isOpen: boolean; isPushed: boolean; maxHeight: number }>`
+const AccordionContent = styled.div<{
+  isOpen: boolean;
+  isPushed: boolean;
+  maxHeight: number;
+}>`
   max-height: ${({ isOpen, maxHeight }) => (isOpen ? `${maxHeight}px` : 0)};
   transition: max-height 0.3s ease-out;
   overflow: hidden;
-  border-color: ${({ isOpen, isPushed }) => (isOpen && isPushed ? "rgba(133, 133, 133, 0.1)" : "transparent")};
+  border-color: ${({ isOpen, isPushed }) =>
+    isOpen && isPushed ? "rgba(133, 133, 133, 0.1)" : "transparent"};
   border-style: solid;
   border-width: 1px 0;
 `;
@@ -54,8 +63,11 @@ const Accordion: React.FC<Props> = ({
 
   return (
     <Container>
-      <MenuEntry onClick={handleClick} className={className} isActive={isActive}>
-        {icon}
+      <MenuEntry
+        onClick={handleClick}
+        className={className}
+        isActive={isActive}
+      >
         <LinkLabel isPushed={isPushed}>{label}</LinkLabel>
         {status && (
           <LinkStatusComponent color={status.color} fontSize="14px">

@@ -64,51 +64,57 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
             >
               {isPushed &&
                 entry.items.map((item) => {
-                  if (item.items) { 
+                  if (item.items) {
                     const InnerIcon = Icons[item.icon];
-                    const InnericonElement = <InnerIcon width="18px" mr="4px" ml="6px" />;
-                    return(
-                    <Accordion
-                      key={item.label}
-                      isPushed={isPushed}
-                      pushNav={pushNav}
-                      icon={InnericonElement}
-                      label={item.label}
-                      status={item.status}
-                      initialOpenState={initialOpenState}
-                      className={calloutClass}
-                      isActive={item.items.some(
-                        (item) => item.href === location.pathname
-                      )}
-                    >
-                      {isPushed &&
-                        item.items.map((innerItem) => {
-                          return (
-                            <MenuEntry
-                              key={innerItem.href}
-                              secondary
-                              isActive={innerItem.href === location.pathname}
-                              onClick={handleClick}
-                            >
-                              <MenuLink
-                                href={innerItem.href}
-                                target={innerItem.target ? innerItem.target : "_self"}
+                    const InnericonElement = (
+                      <InnerIcon width="18px" mr="4px" ml="6px" />
+                    );
+                    return (
+                      <Accordion
+                        key={item.label}
+                        isPushed={isPushed}
+                        pushNav={pushNav}
+                        icon={InnericonElement}
+                        label={item.label}
+                        status={item.status}
+                        initialOpenState={initialOpenState}
+                        className={calloutClass}
+                        isActive={item.items.some(
+                          (item) => item.href === location.pathname
+                        )}
+                      >
+                        {isPushed &&
+                          item.items.map((innerItem) => {
+                            return (
+                              <MenuEntry
+                                key={innerItem.href}
+                                secondary
+                                isActive={innerItem.href === location.pathname}
+                                onClick={handleClick}
                               >
-                                <LinkLabel isPushed={isPushed}>
+                                <MenuLink
+                                  href={innerItem.href}
+                                  target={
+                                    innerItem.target
+                                      ? innerItem.target
+                                      : "_self"
+                                  }
+                                >
+                                  <LinkLabel isPushed={isPushed}>
                                     {"　" + innerItem.label}
-                                </LinkLabel>
-                                {innerItem.status && (
-                                  <LinkStatus
-                                    color={innerItem.status.color}
-                                    fontSize="12px"
-                                  >
-                                    {innerItem.status.text}
-                                  </LinkStatus>
-                                )}
-                              </MenuLink>
-                            </MenuEntry>
-                          );
-                        })}
+                                  </LinkLabel>
+                                  {innerItem.status && (
+                                    <LinkStatus
+                                      color={innerItem.status.color}
+                                      fontSize="12px"
+                                    >
+                                      {innerItem.status.text}
+                                    </LinkStatus>
+                                  )}
+                                </MenuLink>
+                              </MenuEntry>
+                            );
+                          })}
                       </Accordion>
                     );
                   }
@@ -140,17 +146,22 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
                           )}
                         </MenuLink>
                       ) : (
-                      <MenuLink
-                        href={item.href}
-                        target={item.target ? item.target : "_self"}
-                      >
-                        <LinkLabel isPushed={isPushed}>{item.label}</LinkLabel>
-                        {item.status && (
-                          <LinkStatus color={item.status.color} fontSize="14px">
-                            {item.status.text}
-                          </LinkStatus>
-                        )}
-                      </MenuLink>
+                        <MenuLink
+                          href={item.href}
+                          target={item.target ? item.target : "_self"}
+                        >
+                          <LinkLabel isPushed={isPushed}>
+                            {item.label}
+                          </LinkLabel>
+                          {item.status && (
+                            <LinkStatus
+                              color={item.status.color}
+                              fontSize="14px"
+                            >
+                              {item.status.text}
+                            </LinkStatus>
+                          )}
+                        </MenuLink>
                       )}
                     </MenuEntry>
                   );
@@ -169,7 +180,6 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
               onClick={handleClick}
               target={entry.target ? entry.target : "_self"}
             >
-              {iconElement}
               <LinkLabel isPushed={isPushed}>{entry.label}</LinkLabel>
               {entry.status && (
                 <LinkStatus color={entry.status.color} fontSize="14px">

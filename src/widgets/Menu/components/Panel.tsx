@@ -11,12 +11,6 @@ interface Props extends PanelProps, PushedProps {
   isMobile: boolean;
 }
 
-const BusybeeLinkContainer = styled.div<{ isPushed: boolean }>`
-  margin-left: ${({ isPushed }) => (isPushed ? "10px" : "0px")};
-  margin-right: ${({ isPushed }) => (isPushed ? "10px" : "0px")};
-  margin-bottom: 10px;
-`;
-
 const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   position: fixed;
   padding-top: ${({ showMenu }) => (showMenu ? "80px" : 0)};
@@ -35,6 +29,7 @@ const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
     #ffffff 100%
   );
   border-image-slice: 1;
+  z-index: 11;
   -webkit-backdrop-filter: blur(9px);
   backdrop-filter: blur(9px);
   width: ${({ isPushed }) => (isPushed ? `${SIDEBAR_WIDTH_FULL}px` : 0)};
@@ -72,18 +67,12 @@ const Panel: React.FC<Props> = (props) => {
   const isMobile = isXl === false;
   return (
     <StyledPanel isPushed={isPushed} showMenu={showMenu}>
-      <BusybeeLinkContainer isPushed={isPushed}>
-        <a href="https://busybee.honeyfarm.finance">
-          <BusybeeImage height="36px" src="images/busybee_link2.png" />
-        </a>
-      </BusybeeLinkContainer>
-
       <PanelBody {...props} />
       {/*
       <a href={"https://rugdoc.io/project/honey-farm/"} target="_blank">
         <img width="100%" src="images/rugdoc.png" />
       </a>
-      */}
+      
       <Banner isPushed={isPushed}>
         <a
           href="https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-HoneyFarm-v1.0.pdf"
@@ -92,6 +81,7 @@ const Panel: React.FC<Props> = (props) => {
           <RoundedImage src="images/audit.png" width="200" />
         </a>
       </Banner>
+      */}
       <PanelFooter {...props} />
     </StyledPanel>
   );

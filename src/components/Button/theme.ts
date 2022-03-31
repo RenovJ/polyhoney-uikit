@@ -19,17 +19,22 @@ export const scaleVariants = {
 export const styleVariants = {
   [variants.PRIMARY]: {
     //backgroundColor: "primary",
-    background: "linear-gradient(#FDED95, #ECD86B)",
-    color: "#1F1F1F",
+    background: "linear-gradient(180deg, #53CAEB 0%, #357AA1 100%);",
+    color: "#FFFFFF",
+    textShadow: "0px 1px 1px rgba(0, 0, 0, 0.25)",
+    border: "2px solid #FFFFFF",
+    boxSizing: "border-box",
+    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+    borderRadius: "100px",
   },
   [variants.SECONDARY]: {
-    backgroundColor: "transparent",
-    border: "2px solid",
-    borderColor: "primary",
     boxShadow: "none",
-    color: "primary",
+    backgroundColor: "#377BA2",
+    borderRadius: "100px",
+    color: "#ffffff",
     ":disabled": {
-      backgroundColor: "transparent",
+      backgroundColor: "#DBDBDB",
+      color: "#656565",
     },
   },
   [variants.TERTIARY]: {

@@ -41,7 +41,7 @@ const SocialLinks: React.FC = () => (
                   key={item.label}
                   href={item.href}
                   aria-label={item.label}
-                  color="menuBackground"
+                  color="textMenu"
                 >
                   {item.label}
                 </Link>
