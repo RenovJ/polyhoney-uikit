@@ -29,7 +29,6 @@ const Wrapper = styled.div`
   & > img.background-img {
     position: absolute;
     min-height: 100vh;
-    height: 100%;
     width: 100%;
     object-fit: fill;
   }
@@ -82,13 +81,6 @@ const MobileOnlyOverlay = styled(Overlay)`
   }
 `;
 
-const HoverImg = styled.img`
-  transition: background-color 0.2s, opacity 0.2s;
-  &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
-    opacity: 0.65;
-  }
-`;
-
 const Menu: React.FC<NavProps> = ({
   account,
   login,
@@ -109,7 +101,6 @@ const Menu: React.FC<NavProps> = ({
   const [isPushed, setIsPushed] = useState(!isMobile);
   const [showMenu, setShowMenu] = useState(true);
   const refPrevOffset = useRef(window.pageYOffset);
-  const [onPresentNetworkSelectModal] = useModal(<NetworkSelectModal />);
   useEffect(() => {
     const handleScroll = () => {
       const currentOffset = window.pageYOffset;
