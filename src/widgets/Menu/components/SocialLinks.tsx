@@ -9,12 +9,12 @@ import { socials } from "../config";
 
 const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 const SocialLinks: React.FC = () => (
-  <Flex flexWrap={"wrap"} ml={"10px"}>
+  <Flex justifyContent="space-between" ml="10px" width="100%">
     {socials.map((social, index) => {
       const Icon = Icons[social.icon];
       const iconProps = {
-        width: "24px",
-        color: "textMenu",
+        width: "28px",
+        color: "secondary",
         style: { cursor: "pointer" },
       };
       const HoverIcon = styled(Icon)`
@@ -26,10 +26,7 @@ const SocialLinks: React.FC = () => (
       const mr = index < socials.length - 1 ? "6px" : 0;
       if (social.items) {
         return (
-          <div
-            key={social.label}
-            style={{ flex: "1 1 45%", paddingLeft: "9px" }}
-          >
+          <div key={social.label} style={{ flex: "1 1 20%" }}>
             <Dropdown
               key={social.label}
               position="top"
@@ -51,7 +48,7 @@ const SocialLinks: React.FC = () => (
         );
       }
       return (
-        <div key={social.label} style={{ flex: "1 1 45%", paddingLeft: "9px" }}>
+        <div key={social.label} style={{ flex: "1 1 20%" }}>
           <Link
             external
             href={social.href}

@@ -29,7 +29,7 @@ export const styleVariants = {
   },
   [variants.SECONDARY]: {
     boxShadow: "none",
-    backgroundColor: "#377BA2",
+    backgroundColor: "secondary",
     borderRadius: "100px",
     color: "#ffffff",
     ":disabled": {

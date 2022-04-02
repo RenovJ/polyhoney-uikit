@@ -33,9 +33,9 @@ const MenuEntry = styled.div<Props>`
   padding: ${({ secondary }) => (secondary ? "0 48px" : "0 38px")};
   font-size: ${({ secondary }) => (secondary ? "14px" : "16px")};
   color: ${({ isActive, theme }) =>
-    isActive ? theme.colors.primary : theme.colors.textSubtle};
+    isActive ? theme.colors.textMenu : theme.colors.textSubtle};
   box-shadow: ${({ isActive, theme }) =>
-    isActive ? `inset 4px 0px 0px ${theme.colors.primary}` : "none"};
+    isActive ? `inset 4px 0px 0px ${theme.colors.textMenu}` : "none"};
 
   a {
     display: flex;

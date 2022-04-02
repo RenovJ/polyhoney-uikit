@@ -47,9 +47,9 @@ export const links = [
     href: "/syrup",
   },
   {
-    label: 'Bridge',
-    icon: 'NftIcon',
-    href: 'https://bridge.cubdefi.com/',
+    label: "Bridge",
+    icon: "NftIcon",
+    href: "https://bridge.cubdefi.com/",
   },
   {
     label: "Lottery",
@@ -134,8 +134,8 @@ export const links = [
       },
       {
         label: "Discord",
-        href: "https://discord.gg/wWJxRE2k9B"
-      }
+        href: "https://discord.gg/wWJxRE2k9B",
+      },
     ],
   },
 ];
@@ -147,11 +147,11 @@ export const socials = [
     items: [
       {
         label: "Announcement",
-        href: "https://t.me/HoneyFarmAnn"
+        href: "https://t.me/HoneyFarmAnn",
       },
       {
         label: "Community",
-        href: "https://t.me/HoneyFarmChat"
+        href: "https://t.me/HoneyFarmChat",
       },
     ],
   },
@@ -164,11 +164,6 @@ export const socials = [
     label: "Twitter",
     icon: "TwitterIcon",
     href: "https://twitter.com/HoneyFarmFi",
-  },
-  {
-    label: "Reddit",
-    icon: "RedditIcon",
-    href: "https://www.reddit.com/r/HoneyFarm_Official/",
   },
 ];
 

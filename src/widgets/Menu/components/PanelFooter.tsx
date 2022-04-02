@@ -1,13 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { CogIcon } from "../../../components/Svg";
-import IconButton from "../../../components/Button/IconButton";
-import { MENU_ENTRY_HEIGHT } from "../config";
 import { PanelProps, PushedProps } from "../types";
 import CakePrice from "./CakePrice";
-import ThemeSwitcher from "./ThemeSwitcher";
 import SocialLinks from "./SocialLinks";
-import LangSelector from "./LangSelector";
 
 interface Props extends PanelProps, PushedProps {}
 
@@ -16,19 +11,12 @@ const Container = styled.div`
   padding: 8px 4px;
 `;
 
-const SettingsEntry = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: ${MENU_ENTRY_HEIGHT}px;
-  padding: 0 8px;
-`;
-
 const SocialEntry = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: ${MENU_ENTRY_HEIGHT}px;
+  height: fit-content;
   padding: 0 16px;
 `;
 

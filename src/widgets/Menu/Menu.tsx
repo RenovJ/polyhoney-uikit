@@ -30,6 +30,7 @@ const Wrapper = styled.div`
     position: absolute;
     min-height: 100vh;
     width: 100%;
+    height: 110%;
     object-fit: fill;
   }
 `;

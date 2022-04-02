@@ -11,7 +11,12 @@ interface Props {
   mb: string;
 }
 
-const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss, mb }) => {
+const WalletCard: React.FC<Props> = ({
+  login,
+  walletConfig,
+  onDismiss,
+  mb,
+}) => {
   const { title, icon: Icon } = walletConfig;
   return (
     <Button
@@ -19,14 +24,17 @@ const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss, mb }) => 
       variant="tertiary"
       onClick={() => {
         login(walletConfig.connectorId);
-        window.localStorage.setItem(connectorLocalStorageKey, walletConfig.connectorId);
+        window.localStorage.setItem(
+          connectorLocalStorageKey,
+          walletConfig.connectorId
+        );
         onDismiss();
       }}
       style={{ justifyContent: "space-between" }}
       mb={mb}
       id={`wallet-connect-${title.toLocaleLowerCase()}`}
     >
-      <Text bold color="primary" mr="16px">
+      <Text bold color="textMenuHovered" mr="16px">
         {title}
       </Text>
       <Icon width="32px" />
