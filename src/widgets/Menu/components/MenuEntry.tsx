@@ -32,6 +32,7 @@ const MenuEntry = styled.div<Props>`
   height: ${MENU_ENTRY_HEIGHT}px;
   padding: ${({ secondary }) => (secondary ? "0 48px" : "0 38px")};
   font-size: ${({ secondary }) => (secondary ? "14px" : "16px")};
+  font-weight: ${({ isActive }) => (isActive ? 700 : 400)};
   color: ${({ isActive, theme }) =>
     isActive ? theme.colors.textMenu : theme.colors.textSubtle};
   box-shadow: ${({ isActive, theme }) =>

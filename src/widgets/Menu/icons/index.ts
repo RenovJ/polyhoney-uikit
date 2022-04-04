@@ -24,7 +24,6 @@ export { default as TokenizeIcon } from "./Tokenize";
 export { default as AuditIcon } from "./Audit";
 export { default as MediumIcon } from "./Medium";
 export { default as BuybackIcon } from "./Buyback";
-export { default as RoyalJellyIcon } from "./RoyalJelly";
 export { default as RedditIcon } from "./Reddit";
 export { default as LayerIcon } from "./Layer";
 export { default as VaultIcon } from "./Vault";

@@ -38,9 +38,13 @@ export const styleVariants = {
     },
   },
   [variants.TERTIARY]: {
-    backgroundColor: "tertiary",
-    boxShadow: "none",
-    color: "primary",
+    backgroundColor: "textMenuHovered",
+    border: "2px solid",
+    borderColor: "secondart",
+    boxSizing: "border-box",
+    boxShadow: "0px 0px 20px rgba(33, 88, 119, 0.3)",
+    borderRadius: "100px",
+    color: "secondary",
   },
   [variants.SUBTLE]: {
     backgroundColor: "textSubtle",

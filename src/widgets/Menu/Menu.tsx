@@ -20,7 +20,7 @@ import {
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  font-family: "PT Sans Narrow", sans-serif;
+  font-family: "Sen", sans-serif;
   & > img {
     position: absolute;
     top: 0;
@@ -93,7 +93,6 @@ const Menu: React.FC<NavProps> = ({
   currentLang,
   cakePriceUsd,
   links,
-  // profile,
   children,
   diceBackground,
 }) => {
