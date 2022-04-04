@@ -18,18 +18,12 @@ const SocialEntry = styled.div`
   justify-content: space-between;
   height: fit-content;
   padding: 0 16px;
+  & svg:hover {
+    opacity: 0.65;
+  }
 `;
 
-const PanelFooter: React.FC<Props> = ({
-  isPushed,
-  pushNav,
-  toggleTheme,
-  isDark,
-  cakePriceUsd,
-  currentLang,
-  langs,
-  setLang,
-}) => {
+const PanelFooter: React.FC<Props> = ({ cakePriceUsd }) => {
   return (
     <Container>
       <SocialEntry>

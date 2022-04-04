@@ -21,7 +21,7 @@ const WalletCard: React.FC<Props> = ({
   return (
     <Button
       width="100%"
-      variant="tertiary"
+      variant="secondary"
       onClick={() => {
         login(walletConfig.connectorId);
         window.localStorage.setItem(

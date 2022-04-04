@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
-import { SvgProps, Svg } from "../../../components/Svg";
-import * as IconModule from "../icons";
 import Accordion from "./Accordion";
 import { MenuEntry, LinkLabel, LinkStatus } from "./MenuEntry";
 import MenuLink from "./MenuLink";
@@ -13,8 +11,6 @@ import { useModal } from "../../Modal";
 interface Props extends PanelProps, PushedProps {
   isMobile: boolean;
 }
-
-const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 
 const Container = styled.div`
   display: flex;
@@ -33,8 +29,6 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
   return (
     <Container>
       {links.map((entry) => {
-        const Icon = Icons[entry.icon];
-        const iconElement = <Icon width="24px" mr="8px" />;
         const calloutClass = entry.calloutClass
           ? entry.calloutClass
           : undefined;
@@ -53,7 +47,6 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
               key={entry.label}
               isPushed={isPushed}
               pushNav={pushNav}
-              icon={iconElement}
               label={entry.label}
               status={entry.status}
               initialOpenState={initialOpenState}
@@ -65,16 +58,11 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
               {isPushed &&
                 entry.items.map((item) => {
                   if (item.items) {
-                    const InnerIcon = Icons[item.icon];
-                    const InnericonElement = (
-                      <InnerIcon width="18px" mr="4px" ml="6px" />
-                    );
                     return (
                       <Accordion
                         key={item.label}
                         isPushed={isPushed}
                         pushNav={pushNav}
-                        icon={InnericonElement}
                         label={item.label}
                         status={item.status}
                         initialOpenState={initialOpenState}

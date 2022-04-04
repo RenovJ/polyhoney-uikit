@@ -12,7 +12,6 @@ import { ArrowDropDownIcon, ArrowDropUpIcon } from "../../../components/Svg";
 interface Props extends PushedProps {
   label: string;
   status?: LinkStatus;
-  icon: React.ReactElement;
   initialOpenState?: boolean;
   className?: string;
   children: ReactNode;
@@ -43,7 +42,6 @@ const AccordionContent = styled.div<{
 const Accordion: React.FC<Props> = ({
   label,
   status,
-  icon,
   isPushed,
   pushNav,
   initialOpenState = false,

@@ -15,14 +15,11 @@ const SocialLinks: React.FC = () => (
       const iconProps = {
         width: "28px",
         color: "secondary",
-        style: { cursor: "pointer" },
+        style: {
+          cursor: "pointer",
+          transition: "background-color 0.2s, opacity 0.2s",
+        },
       };
-      const HoverIcon = styled(Icon)`
-        transition: background-color 0.2s, opacity 0.2s;
-        &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
-          opacity: 0.65;
-        }
-      `;
       const mr = index < socials.length - 1 ? "6px" : 0;
       if (social.items) {
         return (
@@ -30,7 +27,7 @@ const SocialLinks: React.FC = () => (
             <Dropdown
               key={social.label}
               position="top"
-              target={<HoverIcon {...iconProps} mr={mr} />}
+              target={<Icon {...iconProps} mr={mr} />}
             >
               {social.items.map((item) => (
                 <Link
@@ -56,7 +53,7 @@ const SocialLinks: React.FC = () => (
             mr={mr}
             pl={social.label == "Twitter" ? "2px" : "0px"}
           >
-            <HoverIcon {...iconProps} />
+            <Icon {...iconProps} />
           </Link>
         </div>
       );

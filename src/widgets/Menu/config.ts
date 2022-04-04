@@ -142,28 +142,28 @@ export const links = [
 
 export const socials = [
   {
-    label: "Discord",
-    icon: "TelegramIcon",
-    items: [
-      {
-        label: "Announcement",
-        href: "https://t.me/HoneyFarmAnn",
-      },
-      {
-        label: "Community",
-        href: "https://t.me/HoneyFarmChat",
-      },
-    ],
-  },
-  {
-    label: "Medium",
-    icon: "MediumIcon",
-    href: "https://medium.com/@honeyfarmchef",
+    label: "Docs",
+    icon: "GitBookIcon",
+    href: "https://medium.com/@MonopoliFarm",
   },
   {
     label: "Twitter",
     icon: "TwitterIcon",
     href: "https://twitter.com/MonopoliFarm",
+  },
+  {
+    label: "Telegram",
+    icon: "TelegramIcon",
+    items: [
+      {
+        label: "Announcement",
+        href: "https://t.me/monopoliann",
+      },
+      {
+        label: "Community",
+        href: "https://t.me/monopolifarmchat",
+      },
+    ],
   },
 ];
 

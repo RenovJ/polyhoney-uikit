@@ -23,415 +23,415 @@ const Icon: React.FC<SvgProps> = (props) => {
           d="M77.8965 21.5842L76.7372 25.0088L74.4613 24.465L77.8965 21.5842Z"
           fill="#E4761B"
           stroke="#E4761B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M74.4613 24.465L76.6564 21.8374L77.8965 21.5842L74.4613 24.465Z"
           fill="#E4761B"
           stroke="#E4761B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M76.1908 19.0021L77.8965 21.584L76.6564 21.8372L76.1908 19.0021ZM76.1908 19.0021L77.2883 18.3379L77.8965 21.584L76.1908 19.0021Z"
           fill="#F6851B"
           stroke="#F6851B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M74.7933 17.0517L77.9482 15.9226L77.7914 16.5411L74.7933 17.0517ZM77.6916 17.2841L74.7933 17.0517L77.7914 16.5411L77.6916 17.2841Z"
           fill="#763D16"
           stroke="#763D16"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M77.6916 17.2841L77.2878 18.3385L74.7933 17.0517L77.6916 17.2841ZM78.3235 16.1841L77.7914 16.5411L77.9482 15.9226L78.3235 16.1841ZM77.6916 17.2841L77.7914 16.5411L78.2143 16.8483L77.6916 17.2841Z"
           fill="#763D16"
           stroke="#763D16"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M72.014 23.631L72.8028 23.851L74.461 24.4653L72.014 23.631Z"
           fill="#E2761B"
           stroke="#E2761B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M77.2877 18.3382L77.6915 17.2839L78.0384 17.5163L77.2877 18.3382ZM77.2877 18.3382L74.014 17.3959L74.7933 17.0514L77.2877 18.3382Z"
           fill="#763D16"
           stroke="#763D16"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M75.5725 13.8177L74.7933 17.0514L74.014 17.3959L75.5725 13.8177Z"
           fill="#763D16"
           stroke="#763D16"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M77.9482 15.9223L74.7933 17.0514L75.5726 13.8177L77.9482 15.9223Z"
           fill="#763D16"
           stroke="#763D16"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M75.5717 13.8172L78.8643 13.4851L77.9473 15.9218L75.5717 13.8172Z"
           fill="#763D16"
           stroke="#763D16"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M77.2877 18.3383L76.1901 19.0024L74.014 17.396L77.2877 18.3383Z"
           fill="#F6851B"
           stroke="#F6851B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M78.7218 11.1567L78.8643 13.4854L75.5717 13.8175L78.7218 11.1567Z"
           fill="#763D16"
           stroke="#763D16"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M78.7231 11.1567L72.1425 15.3368L72.057 12.5017L78.7231 11.1567Z"
           fill="#E2761B"
           stroke="#E2761B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M67.1625 12.1617L72.0563 12.5021L72.1418 15.3373L67.1625 12.1617Z"
           fill="#F6851B"
           stroke="#F6851B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M74.014 17.3959L72.142 15.337L75.5724 13.8177L74.014 17.3959Z"
           fill="#763D16"
           stroke="#763D16"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M74.0141 17.396L76.1902 19.0024L73.1351 19.2972L74.0141 17.396Z"
           fill="#E4761B"
           stroke="#E4761B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M73.135 19.2965L72.142 15.3364L74.014 17.3953L73.135 19.2965Z"
           fill="#E4761B"
           stroke="#E4761B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M75.5724 13.8175L72.142 15.3368L78.7225 11.1567L75.5724 13.8175Z"
           fill="#763D16"
           stroke="#763D16"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M67.2055 24.3992L68.7592 25.8147L66.6449 24.1335L67.2055 24.3992Z"
           fill="#C0AD9E"
           stroke="#C0AD9E"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M74.4613 24.4652L75.1978 22.0203L76.6564 21.8376L74.4613 24.4652Z"
           fill="#CD6116"
           stroke="#CD6116"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M60.9047 17.587L63.5939 15.1172L61.2515 17.2923L60.9047 17.587Z"
           fill="#E2761B"
           stroke="#E2761B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M76.6556 21.8377L75.1969 22.0204L76.19 19.0026L76.6556 21.8377ZM72.1418 15.3373L69.5239 15.2625L67.1625 12.1617L72.1418 15.3373Z"
           fill="#F6851B"
           stroke="#F6851B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M76.1904 19.0034L75.1973 22.0212L75.1166 20.5476L76.1904 19.0034Z"
           fill="#E4751F"
           stroke="#E4751F"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M73.1351 19.2981L76.1902 19.0034L75.1164 20.5476L73.1351 19.2981Z"
           fill="#CD6116"
           stroke="#CD6116"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M69.5248 15.2622L72.1427 15.3369L73.1358 19.297L69.5248 15.2622Z"
           fill="#F6851B"
           stroke="#F6851B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M69.524 15.2628L62.4588 9.55103L67.1626 12.162L69.524 15.2628ZM67.1578 25.2667L61.0192 26.9271L59.7933 22.8384L67.1578 25.2667Z"
           fill="#E4761B"
           stroke="#E4761B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M61.8177 18.6079L64.1364 17.0181L66.0797 17.4124L61.8177 18.6079Z"
           fill="#763D16"
           stroke="#763D16"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M66.0794 17.4126L64.1361 17.0183L65.1766 13.2657L66.0794 17.4126Z"
           fill="#763D16"
           stroke="#763D16"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M61.2513 17.292L64.1354 17.0181L61.8167 18.6079L61.2513 17.292Z"
           fill="#763D16"
           stroke="#763D16"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M75.1164 20.5473L73.9191 20.0201L73.1351 19.2979L75.1164 20.5473Z"
           fill="#CD6116"
           stroke="#CD6116"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M61.2525 17.2923L61.0482 16.35L64.1366 17.0183L61.2525 17.2923Z"
           fill="#763D16"
           stroke="#763D16"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M73.6722 21.2067L73.9193 20.0195L75.1166 20.5467L73.6722 21.2067Z"
           fill="#233447"
           stroke="#233447"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M75.1974 22.0204L73.6722 21.2068L75.1166 20.5468L75.1974 22.0204Z"
           fill="#F6851B"
           stroke="#F6851B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M64.1364 17.0183L61.0481 16.3499L60.7963 15.5571L64.1364 17.0183ZM65.177 13.2657L64.1364 17.0183L60.7963 15.5571L65.177 13.2657ZM65.177 13.2657L69.5244 15.2624L66.0797 17.4126L65.177 13.2657Z"
           fill="#763D16"
           stroke="#763D16"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M66.0795 17.4124L69.5242 15.2622L71.0588 19.3592L66.0795 17.4124ZM71.0588 19.3592L66.298 19.2721L66.0795 17.4124L71.0588 19.3592Z"
           fill="#E4761B"
           stroke="#E4761B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M61.8177 18.6079L66.0797 17.4124L66.2982 19.2721L61.8177 18.6079ZM73.1353 19.297L71.059 19.3592L69.5244 15.2622L73.1353 19.297Z"
           fill="#F6851B"
           stroke="#F6851B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M73.9191 20.0201L73.672 21.2073L73.1351 19.2979L73.9191 20.0201Z"
           fill="#CD6116"
           stroke="#CD6116"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M62.4584 9.55103L69.5236 15.2628L65.1761 13.2662L62.4584 9.55103Z"
           fill="#763D16"
           stroke="#763D16"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M59.7933 22.8376L65.7515 22.6217L67.1578 25.2659L59.7933 22.8376Z"
           fill="#E4761B"
           stroke="#E4761B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M67.1577 25.2659L65.7513 22.6217L68.6781 22.4972L67.1577 25.2659Z"
           fill="#CD6116"
           stroke="#CD6116"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M73.6719 21.2069L75.197 22.0205L76.038 23.7515L73.6719 21.2069ZM66.2979 19.2726L59.7933 22.8382L61.8174 18.6084L66.2979 19.2726ZM65.7515 22.6224L59.7933 22.8382L66.2979 19.2726L65.7515 22.6224ZM73.135 19.2975L73.5246 20.5345L71.6431 20.6299L73.135 19.2975ZM71.6431 20.6299L71.0587 19.3597L73.135 19.2975L71.6431 20.6299Z"
           fill="#F6851B"
           stroke="#F6851B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M68.7588 25.8145L67.1576 25.2666L72.7261 26.0844L68.7588 25.8145Z"
           fill="#C0AD9E"
           stroke="#C0AD9E"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M61.8169 18.6079L60.9047 17.5867L61.2515 17.292L61.8169 18.6079Z"
           fill="#763D16"
           stroke="#763D16"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M73.358 25.4783L72.7261 26.0844L67.1576 25.2666L73.358 25.4783Z"
           fill="#D7C1B3"
           stroke="#D7C1B3"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M73.6574 23.9915L67.1576 25.2659L68.678 22.4972L73.6574 23.9915Z"
           fill="#E4761B"
           stroke="#E4761B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M67.1576 25.2663L73.6574 23.9919L73.358 25.478L67.1576 25.2663Z"
           fill="#D7C1B3"
           stroke="#D7C1B3"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M60.7962 15.5569L60.5824 12.3647L65.1769 13.2655L60.7962 15.5569ZM61.2523 17.292L60.6204 16.7316L61.048 16.3497L61.2523 17.292Z"
           fill="#763D16"
           stroke="#763D16"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M69.9935 20.181L71.0578 19.3591L70.9058 21.3682L69.9935 20.181Z"
           fill="#CD6116"
           stroke="#CD6116"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M71.0589 19.3591L69.9946 20.181L68.4457 20.8826L71.0589 19.3591Z"
           fill="#CD6116"
           stroke="#CD6116"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M76.0384 23.7517L75.7486 23.5649L73.6722 21.2072L76.0384 23.7517Z"
           fill="#F6851B"
           stroke="#F6851B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M68.4458 20.8837L66.2982 19.2731L71.059 19.3602L68.4458 20.8837Z"
           fill="#CD6116"
           stroke="#CD6116"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M70.9066 21.3682L71.0587 19.3591L71.6431 20.6293L70.9066 21.3682Z"
           fill="#E4751F"
           stroke="#E4751F"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M60.4105 15.873L60.7954 15.5575L61.0472 16.3503L60.4105 15.873Z"
           fill="#763D16"
           stroke="#763D16"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M70.9069 21.3688L68.4457 20.8832L69.9946 20.1816L70.9069 21.3688Z"
           fill="#233447"
           stroke="#233447"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M65.1769 13.2662L60.5824 12.3654L62.4592 9.55103L65.1769 13.2662Z"
           fill="#763D16"
           stroke="#763D16"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M72.7265 26.0841L72.9878 26.7068L68.7592 25.8143L72.7265 26.0841Z"
           fill="#C0AD9E"
           stroke="#C0AD9E"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M68.6785 22.4977L68.4457 20.8829L70.9069 21.3686L68.6785 22.4977Z"
           fill="#F6851B"
           stroke="#F6851B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M66.2982 19.2731L68.4458 20.8836L68.6786 22.4984L66.2982 19.2731Z"
           fill="#E4751F"
           stroke="#E4751F"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M71.643 20.6304L73.5245 20.535L75.7481 23.5652L71.643 20.6304ZM66.2977 19.2731L68.6781 22.4984L65.7513 22.6229L66.2977 19.2731Z"
           fill="#F6851B"
           stroke="#F6851B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M71.6431 20.6296L73.9807 23.7387L70.9066 21.3685L71.6431 20.6296Z"
           fill="#E4751F"
           stroke="#E4751F"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M70.9066 21.3684L73.9807 23.7386L73.6576 23.9918L70.9066 21.3684Z"
           fill="#F6851B"
           stroke="#F6851B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M73.6575 23.992L68.6781 22.4976L70.9065 21.3685L73.6575 23.992ZM75.748 23.5644L73.9806 23.7387L71.6429 20.6296L75.748 23.5644Z"
           fill="#F6851B"
           stroke="#F6851B"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M76.2134 25.026L75.4532 26.3585L72.9873 26.7071L76.2134 25.026ZM72.9873 26.7071L72.726 26.0845L73.3579 25.4785L72.9873 26.7071Z"
           fill="#C0AD9E"
           stroke="#C0AD9E"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M73.3583 25.4785L73.8239 25.3166L72.9877 26.7071L73.3583 25.4785ZM72.9877 26.7071L73.8239 25.3166L76.2138 25.026L72.9877 26.7071Z"
           fill="#C0AD9E"
           stroke="#C0AD9E"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M75.7486 23.5645L76.333 23.8758L74.556 24.0626L75.7486 23.5645Z"
           fill="#161616"
           stroke="#161616"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M74.5557 24.0626L73.9808 23.7388L75.7483 23.5645L74.5557 24.0626ZM74.3514 24.3075L76.5133 24.0792L76.2139 25.0256L74.3514 24.3075Z"
           fill="#161616"
           stroke="#161616"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M76.2133 25.0253L73.8234 25.3159L74.3508 24.3072L76.2133 25.0253ZM73.8234 25.3159L73.3578 25.4778L73.6571 23.9917L73.8234 25.3159ZM73.6571 23.9917L73.9802 23.7385L74.5551 24.0623L73.6571 23.9917ZM76.3321 23.8755L76.5127 24.0789L74.3508 24.3072L76.3321 23.8755Z"
           fill="#161616"
           stroke="#161616"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M74.3513 24.3077L74.5556 24.0628L76.3326 23.876L74.3513 24.3077ZM73.6576 23.9922L74.3513 24.3077L73.8239 25.3164L73.6576 23.9922Z"
           fill="#161616"
           stroke="#161616"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
         <path
           d="M74.5556 24.0625L74.3513 24.3074L73.6576 23.9919L74.5556 24.0625Z"
           fill="#161616"
           stroke="#161616"
-          stroke-width="0.0362611"
+          strokeWidth="0.0362611"
         />
       </g>
       <path
@@ -458,7 +458,7 @@ const Icon: React.FC<SvgProps> = (props) => {
         d="M23.171 18.9265C23.1585 18.6823 23.2053 18.4394 23.3076 18.2174C23.4099 17.9954 23.5649 17.8006 23.7599 17.6487C24.1331 17.3918 24.475 17.5461 24.5232 17.9931C24.5363 18.2374 24.4897 18.4806 24.3874 18.7026C24.285 18.9247 24.1298 19.1195 23.9344 19.2709C23.5618 19.5291 23.22 19.3747 23.171 18.9265Z"
         fill="white"
       />
-      <g clip-path="url(#clip0_179_4128)">
+      <g clipPath="url(#clip0_179_4128)">
         <path
           d="M19.6997 8.62146L14.8172 11.3765C14.432 11.5946 14.1122 11.9066 13.8896 12.2815C13.6669 12.6563 13.5491 13.0811 13.5479 13.5137L13.5343 19.3181C13.5337 19.7543 13.6518 20.1829 13.8767 20.5606C14.1016 20.9383 14.4253 21.2518 14.8151 21.4694L19.7338 24.2182C20.1235 24.4366 20.5658 24.5511 21.0158 24.5502C21.4658 24.5493 21.9076 24.433 22.2964 24.2131L27.1789 21.458C27.5642 21.2402 27.8841 20.9285 28.1068 20.5538C28.3296 20.1792 28.4475 19.7545 28.4489 19.3221L28.4613 13.5183C28.4618 13.0819 28.3435 12.6532 28.1185 12.2753C27.8935 11.8974 27.5697 11.5837 27.1798 11.3658L22.2611 8.61701C21.8715 8.39933 21.4295 8.28512 20.9798 8.2859C20.5301 8.28668 20.0886 8.40242 19.6997 8.62146V8.62146Z"
           fill="white"
@@ -604,9 +604,9 @@ const Icon: React.FC<SvgProps> = (props) => {
           width="21.1389"
           height="19.4298"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -640,16 +640,16 @@ const Icon: React.FC<SvgProps> = (props) => {
           y2="18.6919"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" />
-          <stop offset="0.04" stop-color="white" stop-opacity="0.91" />
-          <stop offset="0.15" stop-color="white" stop-opacity="0.7" />
-          <stop offset="0.26" stop-color="white" stop-opacity="0.51" />
-          <stop offset="0.37" stop-color="white" stop-opacity="0.35" />
-          <stop offset="0.49" stop-color="white" stop-opacity="0.23" />
-          <stop offset="0.6" stop-color="white" stop-opacity="0.13" />
-          <stop offset="0.72" stop-color="white" stop-opacity="0.06" />
-          <stop offset="0.85" stop-color="white" stop-opacity="0.01" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" />
+          <stop offset="0.04" stopColor="white" stopOpacity="0.91" />
+          <stop offset="0.15" stopColor="white" stopOpacity="0.7" />
+          <stop offset="0.26" stopColor="white" stopOpacity="0.51" />
+          <stop offset="0.37" stopColor="white" stopOpacity="0.35" />
+          <stop offset="0.49" stopColor="white" stopOpacity="0.23" />
+          <stop offset="0.6" stopColor="white" stopOpacity="0.13" />
+          <stop offset="0.72" stopColor="white" stopOpacity="0.06" />
+          <stop offset="0.85" stopColor="white" stopOpacity="0.01" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_179_4128"
@@ -659,16 +659,16 @@ const Icon: React.FC<SvgProps> = (props) => {
           y2="-1853.67"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" />
-          <stop offset="0.04" stop-color="white" stop-opacity="0.91" />
-          <stop offset="0.15" stop-color="white" stop-opacity="0.7" />
-          <stop offset="0.26" stop-color="white" stop-opacity="0.51" />
-          <stop offset="0.37" stop-color="white" stop-opacity="0.35" />
-          <stop offset="0.49" stop-color="white" stop-opacity="0.23" />
-          <stop offset="0.6" stop-color="white" stop-opacity="0.13" />
-          <stop offset="0.72" stop-color="white" stop-opacity="0.06" />
-          <stop offset="0.85" stop-color="white" stop-opacity="0.01" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" />
+          <stop offset="0.04" stopColor="white" stopOpacity="0.91" />
+          <stop offset="0.15" stopColor="white" stopOpacity="0.7" />
+          <stop offset="0.26" stopColor="white" stopOpacity="0.51" />
+          <stop offset="0.37" stopColor="white" stopOpacity="0.35" />
+          <stop offset="0.49" stopColor="white" stopOpacity="0.23" />
+          <stop offset="0.6" stopColor="white" stopOpacity="0.13" />
+          <stop offset="0.72" stopColor="white" stopOpacity="0.06" />
+          <stop offset="0.85" stopColor="white" stopOpacity="0.01" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_179_4128"
@@ -678,16 +678,16 @@ const Icon: React.FC<SvgProps> = (props) => {
           y2="18.5266"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" />
-          <stop offset="0.04" stop-color="white" stop-opacity="0.91" />
-          <stop offset="0.15" stop-color="white" stop-opacity="0.7" />
-          <stop offset="0.26" stop-color="white" stop-opacity="0.51" />
-          <stop offset="0.37" stop-color="white" stop-opacity="0.35" />
-          <stop offset="0.49" stop-color="white" stop-opacity="0.23" />
-          <stop offset="0.6" stop-color="white" stop-opacity="0.13" />
-          <stop offset="0.72" stop-color="white" stop-opacity="0.06" />
-          <stop offset="0.85" stop-color="white" stop-opacity="0.01" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" />
+          <stop offset="0.04" stopColor="white" stopOpacity="0.91" />
+          <stop offset="0.15" stopColor="white" stopOpacity="0.7" />
+          <stop offset="0.26" stopColor="white" stopOpacity="0.51" />
+          <stop offset="0.37" stopColor="white" stopOpacity="0.35" />
+          <stop offset="0.49" stopColor="white" stopOpacity="0.23" />
+          <stop offset="0.6" stopColor="white" stopOpacity="0.13" />
+          <stop offset="0.72" stopColor="white" stopOpacity="0.06" />
+          <stop offset="0.85" stopColor="white" stopOpacity="0.01" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_179_4128"
@@ -697,16 +697,16 @@ const Icon: React.FC<SvgProps> = (props) => {
           y2="1978.94"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" />
-          <stop offset="0.04" stop-color="white" stop-opacity="0.91" />
-          <stop offset="0.15" stop-color="white" stop-opacity="0.7" />
-          <stop offset="0.26" stop-color="white" stop-opacity="0.51" />
-          <stop offset="0.37" stop-color="white" stop-opacity="0.35" />
-          <stop offset="0.49" stop-color="white" stop-opacity="0.23" />
-          <stop offset="0.6" stop-color="white" stop-opacity="0.13" />
-          <stop offset="0.72" stop-color="white" stop-opacity="0.06" />
-          <stop offset="0.85" stop-color="white" stop-opacity="0.01" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" />
+          <stop offset="0.04" stopColor="white" stopOpacity="0.91" />
+          <stop offset="0.15" stopColor="white" stopOpacity="0.7" />
+          <stop offset="0.26" stopColor="white" stopOpacity="0.51" />
+          <stop offset="0.37" stopColor="white" stopOpacity="0.35" />
+          <stop offset="0.49" stopColor="white" stopOpacity="0.23" />
+          <stop offset="0.6" stopColor="white" stopOpacity="0.13" />
+          <stop offset="0.72" stopColor="white" stopOpacity="0.06" />
+          <stop offset="0.85" stopColor="white" stopOpacity="0.01" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_179_4128"
@@ -716,13 +716,13 @@ const Icon: React.FC<SvgProps> = (props) => {
           y2="15.9851"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#3574A1" />
-          <stop offset="0.09" stop-color="#2B5881" />
-          <stop offset="0.23" stop-color="#1E535A" />
-          <stop offset="0.37" stop-color="#133539" />
-          <stop offset="0.51" stop-color="#0B1E20" />
-          <stop offset="0.66" stop-color="#00383F" />
-          <stop offset="0.82" stop-color="#010303" />
+          <stop stopColor="#3574A1" />
+          <stop offset="0.09" stopColor="#2B5881" />
+          <stop offset="0.23" stopColor="#1E535A" />
+          <stop offset="0.37" stopColor="#133539" />
+          <stop offset="0.51" stopColor="#0B1E20" />
+          <stop offset="0.66" stopColor="#00383F" />
+          <stop offset="0.82" stopColor="#010303" />
           <stop offset="1" />
         </linearGradient>
         <linearGradient
@@ -733,13 +733,13 @@ const Icon: React.FC<SvgProps> = (props) => {
           y2="-220.252"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#2699CA" />
-          <stop offset="0.09" stop-color="#2B6281" />
-          <stop offset="0.23" stop-color="#1E3D5A" />
-          <stop offset="0.37" stop-color="#133539" />
-          <stop offset="0.51" stop-color="#0B1E20" />
-          <stop offset="0.66" stop-color="#050D0E" />
-          <stop offset="0.82" stop-color="#010303" />
+          <stop stopColor="#2699CA" />
+          <stop offset="0.09" stopColor="#2B6281" />
+          <stop offset="0.23" stopColor="#1E3D5A" />
+          <stop offset="0.37" stopColor="#133539" />
+          <stop offset="0.51" stopColor="#0B1E20" />
+          <stop offset="0.66" stopColor="#050D0E" />
+          <stop offset="0.82" stopColor="#010303" />
           <stop offset="1" />
         </linearGradient>
         <linearGradient
@@ -750,13 +750,13 @@ const Icon: React.FC<SvgProps> = (props) => {
           y2="247.314"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#2699CA" />
-          <stop offset="0.09" stop-color="#2B6281" />
-          <stop offset="0.23" stop-color="#1E3D5A" />
-          <stop offset="0.37" stop-color="#133539" />
-          <stop offset="0.51" stop-color="#0B1E20" />
-          <stop offset="0.66" stop-color="#050D0E" />
-          <stop offset="0.82" stop-color="#010303" />
+          <stop stopColor="#2699CA" />
+          <stop offset="0.09" stopColor="#2B6281" />
+          <stop offset="0.23" stopColor="#1E3D5A" />
+          <stop offset="0.37" stopColor="#133539" />
+          <stop offset="0.51" stopColor="#0B1E20" />
+          <stop offset="0.66" stopColor="#050D0E" />
+          <stop offset="0.82" stopColor="#010303" />
           <stop offset="1" />
         </linearGradient>
         <linearGradient
@@ -767,13 +767,13 @@ const Icon: React.FC<SvgProps> = (props) => {
           y2="20.9386"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#3574A1" />
-          <stop offset="0.09" stop-color="#2B5881" />
-          <stop offset="0.23" stop-color="#1E535A" />
-          <stop offset="0.37" stop-color="#133539" />
-          <stop offset="0.51" stop-color="#0B1E20" />
-          <stop offset="0.66" stop-color="#00383F" />
-          <stop offset="0.82" stop-color="#010303" />
+          <stop stopColor="#3574A1" />
+          <stop offset="0.09" stopColor="#2B5881" />
+          <stop offset="0.23" stopColor="#1E535A" />
+          <stop offset="0.37" stopColor="#133539" />
+          <stop offset="0.51" stopColor="#0B1E20" />
+          <stop offset="0.66" stopColor="#00383F" />
+          <stop offset="0.82" stopColor="#010303" />
           <stop offset="1" />
         </linearGradient>
         <clipPath id="clip0_179_4128">
