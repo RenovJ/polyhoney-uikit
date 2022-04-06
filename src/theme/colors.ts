@@ -19,7 +19,7 @@ export const lightColors: Colors = {
   ...brandColors,
   background: "#FAF9FA",
   backgroundDisabled: "#E9EAEB",
-  backgroundAlt: "#FAF9FA",
+  backgroundAlt: "rgba(255,255,255,0.3)",
   contrast: "#191326",
   dropdown: "#F6F6F6",
   invertedContrast: "#FFFFFF",
