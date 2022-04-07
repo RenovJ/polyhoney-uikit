@@ -21,17 +21,24 @@ const Wrapper = styled.div`
   position: relative;
   width: 100%;
   font-family: "Sen", sans-serif;
-  & > img {
-    position: absolute;
+  & > div.background-img-wrapper {
+    position: fixed;
     top: 0;
     left: 0;
-  }
-  & > img.background-img {
-    position: absolute;
-    min-height: 100vh;
-    width: 100%;
-    height: 110%;
-    object-fit: fill;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    & > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    & > img.background-img {
+      min-height: 100vh;
+      width: 100%;
+      height: 110%;
+      object-fit: fill;
+    }
   }
 `;
 
@@ -136,8 +143,20 @@ const Menu: React.FC<NavProps> = ({
   const homeLink = links.find((link) => link.label === "Home");
   return (
     <Wrapper>
-      <img className="background-img" src="/images/background.jpeg" />
-      {diceBackground && <img src="/images/bg_boardgame.png"></img>}
+      <div className="background-img-wrapper">
+        <img
+          className="background-img"
+          src="/images/background.jpeg"
+          alt="background"
+        />
+        {diceBackground && (
+          <img
+            className="background-board-img"
+            src="/images/bg_boardgame.png"
+            alt="background"
+          ></img>
+        )}
+      </div>
       <StyledNav showMenu={showMenu}>
         <Logo
           isPushed={isPushed}
