@@ -40,7 +40,7 @@ export const styleVariants = {
   [variants.TERTIARY]: {
     backgroundColor: "textMenuHovered",
     border: "2px solid",
-    borderColor: "secondart",
+    borderColor: "secondary",
     boxSizing: "border-box",
     boxShadow: "0px 0px 20px rgba(33, 88, 119, 0.3)",
     borderRadius: "100px",
