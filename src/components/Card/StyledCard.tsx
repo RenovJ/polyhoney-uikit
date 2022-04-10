@@ -44,7 +44,7 @@ const StyledCard = styled.div<StyledCardProps>`
       #ffffff 100%
     );
   background-origin: border-box;
-  background-clip: content-box, border-box;
+  background-clip: padding-box, border-box;
   backdrop-filter: blur(16px);
   box-shadow: ${getBoxShadow};
   color: ${({ theme, isDisabled }) =>
