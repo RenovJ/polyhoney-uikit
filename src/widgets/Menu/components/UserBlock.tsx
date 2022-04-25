@@ -15,6 +15,7 @@ const Wrapper = styled.div`
 
 const CustomButton = styled(Button)`
   font-size: 16px;
+  font-family: "Caramel Sweets", sans-serif;
   height: 30px;
   border-radius: 25px;
   ${({ theme }) => theme.mediaQueries.nav} {

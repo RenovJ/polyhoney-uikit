@@ -30,6 +30,9 @@ const ResetCSS = createGlobalStyle`
   body {
     line-height: 1;
     font-size: 16px;
+    font-family: 'Baloo Bhai 2', cursive;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   ol,
   ul {
@@ -62,11 +65,6 @@ const ResetCSS = createGlobalStyle`
   *::before,
   *::after {
     box-sizing: border-box;
-  }
-  {
-    font-family: 'PT Sans Narrow', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 
   /* Number */

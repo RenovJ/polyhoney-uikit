@@ -8,10 +8,11 @@ import * as IconModule from "../icons";
 import { socials } from "../config";
 
 const StyledDropdown = styled.div`
-  & svg{
+  & svg {
     transition: background-color 0.2s, opacity 0.2s;
     &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
       opacity: 0.65;
+    }
   }
   [class*="DropdownContent"] {
     background: #343434;
@@ -29,7 +30,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ isMainFooter }) => (
       const Icon = Icons[social.icon];
       const iconProps = {
         width: "24px",
-        color: "textMenu",
+        color: "textMenuHovered",
         style: { cursor: "pointer" },
       };
 

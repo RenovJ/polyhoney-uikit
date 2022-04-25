@@ -20,8 +20,9 @@ const rainbowAnimation = keyframes`
   }
 `;
 
-const LinkLabel = styled.div<{ isPushed: boolean }>`
-  color: ${({ isPushed, theme }) => (isPushed ? theme.colors.textMenu : theme.colors.textMenuHovered)};
+const LinkLabel = styled.div<{ isActive: boolean }>`
+  color: ${({ isActive, theme }) =>
+    isActive ? theme.colors.textMenuHovered : theme.colors.textMenu};
   transition: color 0.4s;
   flex-grow: 1;
 `;
@@ -33,8 +34,9 @@ const MenuEntry = styled.div<Props>`
   height: ${MENU_ENTRY_HEIGHT}px;
   padding: ${({ secondary }) => (secondary ? "0 32px" : "0 16px")};
   font-size: ${({ secondary }) => (secondary ? "14px" : "16px")};
-  color: ${({ theme }) => theme.colors.textMenu};
-  box-shadow: ${({ isActive, theme }) => (isActive ? `inset 4px 0px 0px ${theme.colors.primary}` : "none")};
+  font-family: "Caramel Sweets", sans-serif;
+  color: ${({ isActive, theme }) =>
+    isActive ? theme.colors.textMenuHovered : theme.colors.textMenu};
 
   a {
     display: flex;
@@ -44,11 +46,8 @@ const MenuEntry = styled.div<Props>`
   }
 
   svg {
-    fill: ${({ theme }) => theme.colors.textMenu};
-  }
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.textMenuHovered};
+    fill: ${({ isActive, theme }) =>
+      isActive ? theme.colors.textMenuHovered : theme.colors.textMenu};
   }
 
   // Safari fix
@@ -77,6 +76,9 @@ const LinkStatus = styled(Text)<{ color: keyof Colors }>`
   margin-left: 8px;
 `;
 
-const LinkLabelMemo = React.memo(LinkLabel, (prev, next) => prev.isPushed === next.isPushed);
+const LinkLabelMemo = React.memo(
+  LinkLabel,
+  (prev, next) => prev.isPushed === next.isPushed
+);
 
 export { MenuEntry, LinkStatus, LinkLabelMemo as LinkLabel };

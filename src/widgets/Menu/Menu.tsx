@@ -7,11 +7,9 @@ import { useMatchBreakpoints } from "../../hooks";
 import Panel from "./components/Panel";
 import PartialMenuItems from "./components/PartialMenuItems";
 import UserBlock from "./components/UserBlock";
-import NetworkSelectModal from "./components/NetworkSelectModal";
 import BeePrice from "./components/BeePrice";
 import { HamburgerIcon, HamburgerCloseIcon, LogoIcon } from "./icons";
 import { NavProps } from "./types";
-import { useModal } from "../Modal";
 import { MENU_HEIGHT } from "./config";
 import MenuButton from "./components/MenuButton";
 import SocialLinks from "./components/SocialLinks";
@@ -21,7 +19,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  font-family: "PT Sans Narrow", sans-serif;
+  font-family: "Baloo Bhai 2", cursive;
 `;
 const CenterWrapper = styled.div`
   width: 100%;
@@ -58,7 +56,7 @@ const BodyWrapper = styled.div`
   display: flex;
 `;
 
-const Inner = styled.div<{ isPushed: boolean; }>`
+const Inner = styled.div<{ isPushed: boolean }>`
   flex-grow: 1;
   margin-bottom: 46.4px;
   margin-top: ${MENU_HEIGHT - 60}px;
@@ -87,21 +85,19 @@ const HoverImg = styled.img`
   }
 `;
 
-const StyledLink = styled(Link) <{ margin?: number }>`
-  margin-right: ${({ margin }) => margin ? margin : 6}px;
-  margin-left: ${({ margin }) => margin ? margin : 0}px;
+const StyledLink = styled(Link)<{ margin?: number }>`
+  margin-right: ${({ margin }) => (margin ? margin : 6)}px;
+  margin-left: ${({ margin }) => (margin ? margin : 0)}px;
   display: flex;
   justify-content: end;
   align-items: center;
-  width: 87px;
-  height: 55.3px;
+  width: 208px;
   transition: background-color 0.2s, opacity 0.2s;
   &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
     opacity: 0.65;
   }
   ${({ theme }) => theme.mediaQueries.nav} {
-    width: 72.7px;
-    height: 80px;
+    width: 128px;
   }
 `;
 
@@ -151,13 +147,6 @@ const Menu: React.FC<NavProps> = ({
   const [isPushed, setIsPushed] = useState(!isMobile);
   const homeLink = links.find((link) => link.label === "Home");
   const href = homeLink?.href ?? "/";
-  const isAbsoluteUrl = href.startsWith("http");
-  const innerLogo = (
-    <>
-      <LogoIcon isDark={isDark} />
-    </>
-  );
-  const [onPresentNetworkSelectModal] = useModal(<NetworkSelectModal />);
 
   return (
     <Wrapper>
@@ -176,32 +165,17 @@ const Menu: React.FC<NavProps> = ({
                     mt="4px"
                   >
                     {isPushed ? (
-                      <HamburgerCloseIcon width="30px" color="menuBackground" />
+                      <HamburgerCloseIcon
+                        width="30px"
+                        color="textMenuHovered"
+                      />
                     ) : (
-                      <HamburgerIcon width="30px" color="menuBackground" />
+                      <HamburgerIcon width="30px" color="textMenuHovered" />
                     )}
                   </MenuButton>
-                  {isPushed &&
-                    (isAbsoluteUrl ? (
-                      <StyledLink
-                        as="a"
-                        href={href}
-                        aria-label="Honeyfarm"
-                        margin={1}
-                        style={{ width: 75 }}
-                      >
-                        {innerLogo}
-                      </StyledLink>
-                    ) : (
-                      <StyledLink
-                        to={href}
-                        aria-label="Honeyfarm"
-                        margin={1}
-                        style={{ width: 75 }}
-                      >
-                        {innerLogo}
-                      </StyledLink>
-                    ))}
+                  <StyledLink to={href} aria-label="Honeyfarm" margin={1}>
+                    <LogoIcon isDark={isDark} isMobile />
+                  </StyledLink>
                 </Flex>
               ) : (
                 <BeePrice cakePriceUsd={cakePriceUsd} />
@@ -215,16 +189,15 @@ const Menu: React.FC<NavProps> = ({
                   <PartialMenuItems links={links.slice(0, 4)} />
                 </Flex>
               )}
-              {(isPushed && isMobile) ||
-                (isAbsoluteUrl ? (
-                  <StyledLink as="a" href={href} aria-label="Honeyfarm" margin={isMobile ? undefined : 40}>
-                    {innerLogo}
-                  </StyledLink>
-                ) : (
-                  <StyledLink to={href} aria-label="Honeyfarm" margin={isMobile ? undefined : 40}>
-                    {innerLogo}
-                  </StyledLink>
-                ))}
+              {isMobile || (
+                <StyledLink
+                  to={href}
+                  aria-label="Honeyfarm"
+                  margin={isMobile ? undefined : 10}
+                >
+                  <LogoIcon isDark={isDark} />
+                </StyledLink>
+              )}
               {isMobile || (
                 <Flex
                   justifyContent={"space-around"}
@@ -236,39 +209,9 @@ const Menu: React.FC<NavProps> = ({
               )}
 
               <RightMenuBlockWrapper>
-                {isPushed && isMobile && (
-                  <HoverImg
-                    width={42.24}
-                    height={42.24}
-                    src="images/menu/to_avalanche_m.svg"
-                    style={{ marginRight: "10px" }}
-                    onClick={() => {
-                      onPresentNetworkSelectModal();
-                    }}
-                  />
-                )}
                 <UserBlockWrapper>
                   <UserBlock account={account} login={login} logout={logout} />
                 </UserBlockWrapper>
-                <div>
-                  {isMobile || (
-                    <Flex
-                      mr={24}
-                      mt={6.25}
-                      width={90}
-                      height={30}
-                      onClick={() => {
-                        onPresentNetworkSelectModal();
-                      }}
-                    >
-                      <HoverImg
-                        width={90}
-                        height={30}
-                        src="images/menu/to_avalanche.png"
-                      />
-                    </Flex>
-                  )}
-                </div>
               </RightMenuBlockWrapper>
             </Flex>
           </CenterWrapper>

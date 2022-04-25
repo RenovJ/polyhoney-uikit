@@ -20,7 +20,12 @@ const PartialMenuItems: React.FC<PartialMenuInterface> = ({ links }) => {
           <Dropdown
             target={
               <MenuLink key={link.label} href={"#"} aria-label={link.label}>
-                <Text color="#FFFFFF" fontSize={"20px"} fontWeight={"700"}>
+                <Text
+                  color="#FFFFFF"
+                  fontSize={"20px"}
+                  fontWeight={"700"}
+                  fontFamily={"'Caramel Sweets', sans-serif"}
+                >
                   {link.label + "  "}
                   <span color="#FFFFFF" style={{ fontSize: "8px" }}>
                     ▼
@@ -50,8 +55,9 @@ const PartialMenuItems: React.FC<PartialMenuInterface> = ({ links }) => {
                     color="#FFFFFF"
                     fontSize={"16px"}
                     fontWeight={"700"}
+                    fontFamily={"'Caramel Sweets', sans-serif"}
                   >
-                    {innerLink.label}{" "}
+                    {innerLink.label}
                   </Text>
                 </MenuLink>
               ))}
@@ -63,8 +69,13 @@ const PartialMenuItems: React.FC<PartialMenuInterface> = ({ links }) => {
             aria-label={link.label}
             target={link.target ? link.target : "_self"}
           >
-            <Text color="#FFFFFF" fontSize={"20px"} fontWeight={"700"}>
-              {link.label}{" "}
+            <Text
+              color="#FFFFFF"
+              fontSize={"20px"}
+              fontWeight={"700"}
+              fontFamily={"'Caramel Sweets', sans-serif"}
+            >
+              {link.label}
             </Text>
           </MenuLink>
         )

@@ -24,17 +24,20 @@ const PriceDIV = styled.div`
   background-image: url("images/menu/price_background.png");
   background-size: contain;
   background-repeat: no-repeat;
-  width: 121px;
+  width: 100px;
   height: 41.74px;
 `;
 const PriceText = styled(Text)`
-  padding-top: 5px;
-  padding-left: 58px;
+  padding-top: 7px;
+  padding-left: 36px;
+  padding-right: 5px;
+  text-align: center;
   color: #ffffff;
+  font-family: "Caramel Sweets", sans-serif;
   font-size: 20px;
   ${({ theme }) => theme.mediaQueries.nav} {
-    padding-top: 6px;
-    padding-left: 58px;
+    padding-top: 8px;
+    padding-left: 36px;
     color: #ffffff;
     font-size: 18px;
   }

@@ -18,12 +18,12 @@ const getFontSize = ({ fontSize, small }: TextProps) => {
 const Text = styled.div<TextProps>`
   color: ${getColor};
   font-size: ${getFontSize};
-  font-weight: ${({ bold }) => (bold ? 600 : 400)};
+  font-weight: ${({ bold }) => (bold ? 700 : 400)};
   line-height: 1.5;
+  font-family: "Baloo Bhai 2", cursive;
   ${({ textTransform }) => textTransform && `text-transform: ${textTransform};`}
   ${space}
   ${typography}
-  font-family: 'PT Sans Narrow', sans-serif;
 `;
 
 Text.defaultProps = {

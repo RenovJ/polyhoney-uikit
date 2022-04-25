@@ -66,7 +66,9 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
                 entry.items.map((item) => {
                   if (item.items) {
                     const InnerIcon = item.icon ? Icons[item.icon] : undefined;
-                    const InnericonElement = InnerIcon ? <InnerIcon width="18px" mr="4px" ml="6px" /> : undefined;
+                    const InnericonElement = InnerIcon ? (
+                      <InnerIcon width="18px" mr="4px" ml="6px" />
+                    ) : undefined;
                     return (
                       <Accordion
                         key={item.label}
@@ -92,9 +94,17 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
                               >
                                 <MenuLink
                                   href={innerItem.href}
-                                  target={innerItem.target ? innerItem.target : "_self"}
+                                  target={
+                                    innerItem.target
+                                      ? innerItem.target
+                                      : "_self"
+                                  }
                                 >
-                                  <LinkLabel isPushed={isPushed}>
+                                  <LinkLabel
+                                    isActive={
+                                      innerItem.href === location.pathname
+                                    }
+                                  >
                                     {"　" + innerItem.label}
                                   </LinkLabel>
                                   {innerItem.status && (
@@ -127,7 +137,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
                             onPresentChangeNowModal();
                           }}
                         >
-                          <LinkLabel isPushed={isPushed}>
+                          <LinkLabel isActive={item.href === location.pathname}>
                             {item.label}
                           </LinkLabel>
                           {item.status && (
@@ -144,9 +154,14 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
                           href={item.href}
                           target={item.target ? item.target : "_self"}
                         >
-                          <LinkLabel isPushed={isPushed}>{item.label}</LinkLabel>
+                          <LinkLabel isActive={item.href === location.pathname}>
+                            {item.label}
+                          </LinkLabel>
                           {item.status && (
-                            <LinkStatus color={item.status.color} fontSize="14px">
+                            <LinkStatus
+                              color={item.status.color}
+                              fontSize="14px"
+                            >
                               {item.status.text}
                             </LinkStatus>
                           )}
@@ -170,7 +185,9 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
               target={entry.target ? entry.target : "_self"}
             >
               {iconElement}
-              <LinkLabel isPushed={isPushed}>{entry.label}</LinkLabel>
+              <LinkLabel isActive={entry.href === location.pathname}>
+                {entry.label}
+              </LinkLabel>
               {entry.status && (
                 <LinkStatus color={entry.status.color} fontSize="14px">
                   {entry.status.text}

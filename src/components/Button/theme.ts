@@ -19,8 +19,8 @@ export const scaleVariants = {
 export const styleVariants = {
   [variants.PRIMARY]: {
     //backgroundColor: "primary",
-    background: "linear-gradient(180deg, #E4C100 0%, #AC8600 100%)",
-    color: "#FFFFFF",
+    background: "linear-gradient(180deg, #FFED93 0%, #FFE06B 100%)",
+    color: "#2A2924",
   },
   [variants.SECONDARY]: {
     backgroundColor: "transparent",
