@@ -86,7 +86,7 @@ export const darkColors: Colors = {
   tertiary: "#171414",
   text: "#FFFFFF",
   textDisabled: "#4B4108",
-  textSubtle: "#B9AB5D",
+  textSubtle: "#F0BE0C",
   textMenu: "#FFFFFF",
   textMenuHovered: "#F0BE0C",
   headerBackground: "#2A2924",
