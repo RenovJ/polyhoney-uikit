@@ -15,9 +15,10 @@ const PartialMenuItems: React.FC<PartialMenuInterface> = ({ links }) => {
   const [onPresentChangeNowModal] = useModal(<ChangeNowModal />);
   return (
     <>
-      {links.map((link) =>
+      {links.map((link, i) =>
         link.items ? (
           <Dropdown
+            key={link.label}
             target={
               <MenuLink key={link.label} href={"#"} aria-label={link.label}>
                 <Text
