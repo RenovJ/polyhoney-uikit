@@ -34,7 +34,7 @@ const MenuEntry = styled.div<Props>`
   height: ${MENU_ENTRY_HEIGHT}px;
   padding: ${({ secondary }) => (secondary ? "0 32px" : "0 16px")};
   font-size: ${({ secondary }) => (secondary ? "14px" : "16px")};
-  font-family: "Caramel Sweets", sans-serif;
+  font-family: "Baloo Bhai 2", cursive;
   color: ${({ isActive, theme }) =>
     isActive ? theme.colors.textMenuHovered : theme.colors.textMenu};
 

@@ -25,7 +25,7 @@ const PartialMenuItems: React.FC<PartialMenuInterface> = ({ links }) => {
                   color="#FFFFFF"
                   fontSize={"20px"}
                   fontWeight={"700"}
-                  fontFamily={"'Caramel Sweets', sans-serif"}
+                  fontFamily={"'Baloo Bhai 2', cursive"}
                 >
                   {link.label + "  "}
                   <span color="#FFFFFF" style={{ fontSize: "8px" }}>
@@ -56,7 +56,7 @@ const PartialMenuItems: React.FC<PartialMenuInterface> = ({ links }) => {
                     color="#FFFFFF"
                     fontSize={"16px"}
                     fontWeight={"700"}
-                    fontFamily={"'Caramel Sweets', sans-serif"}
+                    fontFamily={"'Baloo Bhai 2', cursive"}
                   >
                     {innerLink.label}
                   </Text>
@@ -74,7 +74,7 @@ const PartialMenuItems: React.FC<PartialMenuInterface> = ({ links }) => {
               color="#FFFFFF"
               fontSize={"20px"}
               fontWeight={"700"}
-              fontFamily={"'Caramel Sweets', sans-serif"}
+              fontFamily={"'Baloo Bhai 2', cursive"}
             >
               {link.label}
             </Text>

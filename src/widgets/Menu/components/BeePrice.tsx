@@ -33,7 +33,7 @@ const PriceText = styled(Text)`
   padding-right: 5px;
   text-align: center;
   color: #ffffff;
-  font-family: "Caramel Sweets", sans-serif;
+  font-family: "Baloo Bhai 2", cursive;
   font-size: 20px;
   ${({ theme }) => theme.mediaQueries.nav} {
     padding-top: 8px;
