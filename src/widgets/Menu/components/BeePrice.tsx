@@ -34,12 +34,11 @@ const PriceText = styled(Text)`
   text-align: center;
   color: #ffffff;
   font-family: "Baloo Bhai 2", cursive;
-  font-size: 20px;
+  font-size: 18px;
   ${({ theme }) => theme.mediaQueries.nav} {
     padding-top: 8px;
     padding-left: 36px;
     color: #ffffff;
-    font-size: 18px;
   }
 `;
 

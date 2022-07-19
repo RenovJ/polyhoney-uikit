@@ -72,12 +72,14 @@ const Panel: React.FC<Props> = (props) => {
   const { isPushed } = props;
   return (
     <StyledPanel isPushed={isPushed} showMenu={true}>
+      {/*
       <BusybeeLinkContainer isPushed={isPushed}>
         <a href="https://busybee.honeyfarm.finance">
           <BusybeeImage width="100%" src="images/busybee_link2.png" />
         </a>
       </BusybeeLinkContainer>
 
+      */}
       <PanelBody {...props} />
       {/*
       <a href={"https://rugdoc.io/project/honey-farm/"} target="_blank">
