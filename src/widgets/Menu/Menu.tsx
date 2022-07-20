@@ -139,7 +139,7 @@ const Menu: React.FC<NavProps> = ({
   currentLang,
   cakePriceUsd,
   links,
-  // profile,
+  priceLink,
   children,
 }) => {
   const { isXl } = useMatchBreakpoints();
@@ -178,7 +178,7 @@ const Menu: React.FC<NavProps> = ({
                   </StyledLink>
                 </Flex>
               ) : (
-                <BeePrice cakePriceUsd={cakePriceUsd} />
+                <BeePrice cakePriceUsd={cakePriceUsd} priceLink={priceLink} />
               )}
               {isMobile || (
                 <Flex

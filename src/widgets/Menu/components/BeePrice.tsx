@@ -5,6 +5,7 @@ import Skeleton from "../../../components/Skeleton/Skeleton";
 
 interface Props {
   cakePriceUsd?: number;
+  priceLink?: string;
 }
 
 const PriceLink = styled.a`
@@ -42,12 +43,9 @@ const PriceText = styled(Text)`
   }
 `;
 
-const BeePrice: React.FC<Props> = ({ cakePriceUsd }) => {
+const BeePrice: React.FC<Props> = ({ cakePriceUsd, priceLink = "/" }) => {
   return cakePriceUsd ? (
-    <PriceLink
-      href="https://bscscan.com/address/0x1A8d7AC01d21991BF5249A3657C97b2B6d919222"
-      target="_blank"
-    >
+    <PriceLink href={priceLink} target="_blank">
       <PriceDIV>
         <PriceText bold>{`$${cakePriceUsd.toFixed(2)}`}</PriceText>
       </PriceDIV>
