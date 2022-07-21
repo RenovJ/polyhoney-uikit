@@ -48,7 +48,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ isMainFooter }) => (
                   key={socialItemIndex.toString() + 10}
                   href={item.href}
                   aria-label={item.label}
-                  color="menuBackground"
+                  color="textMenuHovered"
                 >
                   {item.label}
                 </Link>
