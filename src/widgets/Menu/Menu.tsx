@@ -235,7 +235,7 @@ const Menu: React.FC<NavProps> = ({
           <Inner isPushed={isPushed}>
             {isMobile && (
               <Flex justifyContent={"center"} mb={15}>
-                <BeePrice cakePriceUsd={cakePriceUsd} />
+                <BeePrice cakePriceUsd={cakePriceUsd} priceLink={priceLink} />
               </Flex>
             )}
             {children}
