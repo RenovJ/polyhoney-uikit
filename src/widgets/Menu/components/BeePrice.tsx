@@ -29,16 +29,17 @@ const PriceDIV = styled.div`
   height: 41.74px;
 `;
 const PriceText = styled(Text)`
-  padding-top: 7px;
-  padding-left: 36px;
+  padding-top: 11px;
+  padding-left: 20px;
   padding-right: 5px;
+  line-height: 20px;
   text-align: center;
   color: #ffffff;
   font-family: "Baloo Bhai 2", cursive;
   font-size: 18px;
   ${({ theme }) => theme.mediaQueries.nav} {
-    padding-top: 8px;
-    padding-left: 36px;
+    padding-top: 11px;
+    padding-left: 20px;
     color: #ffffff;
   }
 `;
@@ -47,7 +48,7 @@ const BeePrice: React.FC<Props> = ({ cakePriceUsd, priceLink = "/" }) => {
   return cakePriceUsd ? (
     <PriceLink href={priceLink} target="_blank">
       <PriceDIV>
-        <PriceText bold>{`$${cakePriceUsd.toFixed(2)}`}</PriceText>
+        <PriceText bold>{`$${cakePriceUsd.toFixed(1)}`}</PriceText>
       </PriceDIV>
     </PriceLink>
   ) : (
