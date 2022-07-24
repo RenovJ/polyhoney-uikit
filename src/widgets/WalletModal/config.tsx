@@ -5,6 +5,7 @@ import TrustWallet from "./icons/TrustWallet";
 import WalletConnect from "./icons/WalletConnect";
 import BinanceChain from "./icons/BinanceChain";
 import SafePalWallet from "./icons/SafePalWallet";
+import BeFiWallet from "./icons/BeFiWallet";
 import { Config, ConnectorNames } from "./types";
 
 const connectors: Config[] = [
@@ -41,6 +42,11 @@ const connectors: Config[] = [
   {
     title: "SafePal Wallet",
     icon: SafePalWallet,
+    connectorId: ConnectorNames.Injected,
+  },
+  {
+    title: "BeFi Wallet",
+    icon: BeFiWallet,
     connectorId: ConnectorNames.Injected,
   },
 ];
