@@ -48,7 +48,7 @@ const BeePrice: React.FC<Props> = ({ cakePriceUsd, priceLink = "/" }) => {
   return cakePriceUsd ? (
     <PriceLink href={priceLink} target="_blank">
       <PriceDIV>
-        <PriceText bold>{`$${cakePriceUsd.toFixed(1)}`}</PriceText>
+        <PriceText bold>{`$${cakePriceUsd.toFixed(2)}`}</PriceText>
       </PriceDIV>
     </PriceLink>
   ) : (
